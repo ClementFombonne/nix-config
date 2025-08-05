@@ -11,6 +11,9 @@ in {
             xwayland.enable = true;
         };
 	environment.systemPackages = with pkgs; [
+	    brightnessctl
+	    pavucontrol
+	    playerctl
 	];
     };
 }
