@@ -6,8 +6,8 @@
 
   "modules-left": [
   "hyprland/workspaces",
-  "custom/uptime",
-  "cpu"
+  "cpu",
+  "memory"
   ],
 
   "modules-center": ["clock"],
@@ -18,9 +18,14 @@
     "pulseaudio", 
     "backlight",
     "battery",
+    "custom/lock"
   ],
 
   "hyprland/workspaces": {
+    "active-only": false,
+    "persistent-workspaces": {
+	    "*": 5
+    },
     "format": "{name}: {icon}",
     "format-icons": {
       "active": "",
@@ -36,7 +41,7 @@
     "format-icons":{
         "on":"󰂯",
         "off": "󰂲",
-        "connected": "󰂱",
+        "connected": "󰂱"
         },
     "on-click": "blueman-manager",
     "tooltip-format-connected":"{device_enumerate}"
@@ -82,17 +87,10 @@
     "tooltip-format": "Memory"
   },
 
-  "custom/uptime": {
-    "format": "{}",
-    "format-icon": [""], 
-    "tooltip": false,
-    "interval": 1600,
-    "exec": "$HOME/.config/waybar/scripts/uptime.sh"
-  },
   
   "backlight": {
         "format": "{icon}  {percent}%",
-        "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
+        "format-icons": ["󰃞","󰃝","󰃟","󰃠"],
         "tooltip": false
   },
   
@@ -126,7 +124,7 @@
   "tooltip": false,
   "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
   "format" : ""
-  },
+  }
 
 }
 
