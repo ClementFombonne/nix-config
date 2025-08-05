@@ -8,8 +8,8 @@ in {
         programs.rofi = {
             enable = true;
             package = pkgs.rofi-wayland; 
-	    plugins = with pkgs; [rofi-calc];
+	    # plugins = with pkgs; [rofi-calc];
 	};
-	home.file.".config/rofi/config.rasi".source = ./config.rasi;
+	# home.file.".config/rofi/config.rasi".source = ./config.rasi;
     };
 }
