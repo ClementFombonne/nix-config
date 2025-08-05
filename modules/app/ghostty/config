@@ -2,3 +2,4 @@ theme = catppuccin-frappe
 background-opacity = 0.80
 font-family = "JetBrains Mono"
 font-size = 14
+confirm-close-surface = false

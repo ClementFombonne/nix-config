@@ -10,7 +10,7 @@
 	sddm.enable = true;
         hyprland.enable = true;
 	waybar.enable = true;
-        wofi.enable = true;
+        rofi.enable = true;
 
         # cli
         nvim.enable = true;

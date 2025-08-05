@@ -7,6 +7,6 @@
         ./hyprland
 	./sddm
 	./waybar
-        ./wofi
+        ./rofi
     ];
 }

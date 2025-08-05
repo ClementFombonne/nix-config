@@ -43,7 +43,7 @@
         "off": "󰂲",
         "connected": "󰂱"
         },
-    "on-click": "blueman-manager",
+    "on-click": "hyprctl dispatch exec '[float] blueman-manager'",
     "tooltip-format-connected":"{device_enumerate}"
   },
 
@@ -70,7 +70,7 @@
     "format-disconnected": "󰤠 ",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "nm-connection-editor"
+    "on-click": "hyprctl dispatch exec '[float] ghostty -e \"sleep 0.1; nmtui\"'"
 
  },
 
@@ -78,7 +78,7 @@
     "interval": 1,
     "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "ghostty -e htop"
+    "on-click": "hyprctl dispatch exec '[float] ghostty -e htop'"
   },
 
   "memory": {
@@ -100,7 +100,7 @@
     "format-icons": {
       "default": ["", "", " "]
     },
-    "on-click": "pavucontrol"
+    "on-click": "hyprctl dispatch exec '[float] pavucontrol'"
   },
 
   "battery": {

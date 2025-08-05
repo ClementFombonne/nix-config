@@ -12,6 +12,7 @@ in {
 	    tealdeer
 	    htop 
 	    fzf
+	    fastfetch
 	    eza
             bat 
 	    unzip 

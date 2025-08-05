@@ -6,6 +6,6 @@
 	./eww/home.nix
         ./hyprland/home.nix
 	./waybar/home.nix
-        ./wofi/home.nix
+        ./rofi/home.nix
     ];
 }
