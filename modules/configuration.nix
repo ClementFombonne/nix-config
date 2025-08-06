@@ -6,8 +6,8 @@
         tmp.cleanOnBoot = true;
         loader.systemd-boot.enable = true;
         loader.efi.canTouchEfiVariables = true;
-	kernelModules = [ "i915" ];
-	initrd.kernelModules = [ "i915" ];
+        kernelModules = [ "i915" ];
+        initrd.kernelModules = [ "i915" ];
     };
     console.keyMap = "fr";
 
@@ -26,7 +26,7 @@
     fonts = {
         packages = with pkgs; [
             jetbrains-mono
-	    nerd-fonts.fira-code
+	        nerd-fonts.fira-code
             roboto
             openmoji-color
         ];
@@ -55,7 +55,7 @@
         gc = {
             automatic = true;
             dates = "weekly";
-            options = "--delete-older-than 7d";
+            options = "--delete-older-than 3d --min-free 5";
         };
         extraOptions = ''
             experimental-features = nix-command flakes
