@@ -17,12 +17,15 @@ vim.cmd.colorscheme "catppuccin"
 
 -- MiniVim setup
 require('mini.basics').setup()
-require('mini.statusline').setup()
 require('mini.pairs').setup()
-require('mini.starter').setup()
 require('mini.files').setup()
-require('mini.icons').setup()
 require('mini.git').setup()
+-- Appearance 
+require('mini.starter').setup()
+require('mini.statusline').setup()
+require('mini.icons').setup()
+require('mini.tabline').setup()
+require('mini.indentscope').setup()
 
 vim.keymap.set('n', '<leader>f', function()
   require('mini.files').open(vim.api.nvim_buf_get_name(0))
