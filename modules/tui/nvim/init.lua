@@ -1,83 +1,29 @@
-local o = vim.opt
-local g = vim.g
+-- Config
+vim.opt.relativenumber = true
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- Autocmds
-vim.cmd [[
-augroup CursorLine
-    au!
-    au VimEnter * setlocal cursorline
-    au WinEnter * setlocal cursorline
-    au BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
+-- Setup Catppuccin
+require("catppuccin").setup({
+    flavour = "frappe", -- latte, frappe, macchiato, mocha
+    transparent_background = true,
+    integrations = {
+        mini = true,
+        native_lsp = { enabled = true },
+    },
+})
 
-autocmd FileType nix setlocal shiftwidth=4
-]]
+vim.cmd.colorscheme "catppuccin"
 
--- Keybinds
-local map = vim.api.nvim_set_keymap
-local opts = { silent = true, noremap = true }
+-- MiniVim setup
+require('mini.basics').setup()
+require('mini.statusline').setup()
+require('mini.pairs').setup()
+require('mini.starter').setup()
+require('mini.files').setup()
+require('mini.icons').setup()
+require('mini.git').setup()
 
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-l>", "<C-w>l", opts)
-map('n', '<C-n>', ':Telescope live_grep <CR>', opts)
-map('n', '<C-f>', ':Telescope find_files <CR>', opts)
-map('n', 'j', 'gj', opts)
-map('n', 'k', 'gk', opts)
-map('n', ';', ':', { noremap = true } )
-
-g.mapleader = ' '
-
--- Performance
-o.lazyredraw = true;
-o.shell = "zsh"
-o.shadafile = "NONE"
-
--- Colors
-o.termguicolors = true
-
--- Undo files
-o.undofile = true
-
--- Indentation
-o.smartindent = true
-o.tabstop = 4
-o.shiftwidth = 4
-o.shiftround = true
-o.expandtab = true
-o.scrolloff = 3
-
--- Set clipboard to use system clipboard
-o.clipboard = "unnamedplus"
-
--- Use mouse
-o.mouse = "a"
-
--- Nicer UI settings
-o.cursorline = true
-o.relativenumber = true
-o.number = true
-
--- Get rid of annoying viminfo file
-o.viminfo = ""
-o.viminfofile = "NONE"
-
--- Miscellaneous quality of life
-o.ignorecase = true
-o.ttimeoutlen = 5
-o.hidden = true
-o.shortmess = "atI"
-o.wrap = false
-o.backup = false
-o.writebackup = false
-o.errorbells = false
-o.swapfile = false
-o.showmode = false
-o.laststatus = 3
-o.pumheight = 6
-o.splitright = true
-o.splitbelow = true
-o.completeopt = "menuone,noselect"
-
+vim.keymap.set('n', '<leader>f', function()
+  require('mini.files').open(vim.api.nvim_buf_get_name(0))
+end, { desc = 'Open mini.files at current file' })
