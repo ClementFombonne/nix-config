@@ -8,7 +8,7 @@ in {
         programs.rofi = {
             enable = true;
             package = pkgs.rofi-wayland; 
-	    theme = ./theme/theme.rasi;
+	    theme = ./themes/theme.rasi;
             extraConfig = {
 	        modi = "drun,run,filebrowser,window,ssh";
                 show-icons = true;
@@ -18,6 +18,6 @@ in {
                 display-window = " Windows";
             };
 	};
-        home.file.".config/rofi/themes/theme.rasi".source = ./theme/theme.rasi;
+        home.file.".config/rofi/themes/theme.rasi".source = ./themes/theme.rasi;
     };
 }
