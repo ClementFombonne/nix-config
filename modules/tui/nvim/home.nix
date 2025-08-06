@@ -14,6 +14,7 @@ in {
             noice-nvim
             gitsigns-nvim
 	        mini-nvim
+            mason-nvim
 	    ];
 	};
         home.file.".config/nvim/init.lua".source = ./init.lua;

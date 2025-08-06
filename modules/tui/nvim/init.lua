@@ -27,11 +27,17 @@ require('noice').setup({
 -- gitsigns setup
 require('gitsigns').setup()
 
+-- Mason setup
+require('mason').setup()
+
 -- MiniVim setup
 require('mini.basics').setup()
 require('mini.pairs').setup()
 require('mini.files').setup()
 require('mini.git').setup()
+require('mini.bracketed').setup()
+require('mini.completion').setup()
+require('mini.snippets').setup()
 -- Appearance 
 require('mini.starter').setup()
 require('mini.statusline').setup()
