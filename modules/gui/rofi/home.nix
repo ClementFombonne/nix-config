@@ -8,10 +8,16 @@ in {
         programs.rofi = {
             enable = true;
             package = pkgs.rofi-wayland; 
-            extraConfig = builtins.readFile ./config.rasi;
+	    theme = ./theme/theme.rasi;
+            extraConfig = {
+	        modi = "drun,run,filebrowser,window,ssh";
+                show-icons = true;
+                display-drun = " Apps";
+                display-run = " Run";
+                display-filebrowser = " Files";
+                display-window = " Windows";
+            };
 	};
-        home.file.".config/rofi/theme/theme.rasi".source = ./theme/theme.rasi;
-        home.file.".config/rofi/theme/colors.rasi".source = ./theme/colors.rasi;
-        home.file.".config/rofi/theme/fonts.rasi".source = ./theme/fonts.rasi;
+        home.file.".config/rofi/themes/theme.rasi".source = ./theme/theme.rasi;
     };
 }
