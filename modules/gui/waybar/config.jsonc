@@ -5,6 +5,7 @@
   "spacing" : 0,
 
   "modules-left": [
+  "custom/app",
   "hyprland/workspaces",
   "cpu",
   "memory"
@@ -20,6 +21,12 @@
     "battery",
     "custom/lock"
   ],
+
+  "custom/app": {
+  "tooltip": false,
+  "on-click": "sh -c 'rofi -show dryrun'",
+  "format" : "󱄅"
+  },
 
   "hyprland/workspaces": {
     "active-only": false,
@@ -76,14 +83,13 @@
 
   "cpu": {
     "interval": 1,
-    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "format": "  {usage:>2}%",
     "on-click": "hyprctl dispatch exec '[float] ghostty -e htop'"
   },
 
   "memory": {
     "interval": 30,
-    "format": "  {used:0.1f}G/{total:0.1f}G",
+    "format": "  {used:0.1f}G",
     "tooltip-format": "Memory"
   },
 
