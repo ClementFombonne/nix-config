@@ -3,6 +3,7 @@
 {
     imports = [
         ./xdg
-	./zsh
+	    ./zsh
+        ./oh-my-posh
     ];
 }
