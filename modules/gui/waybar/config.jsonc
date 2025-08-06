@@ -5,7 +5,6 @@
   "spacing" : 0,
 
   "modules-left": [
-  "custom/app",
   "hyprland/workspaces",
   "cpu",
   "memory"
@@ -21,12 +20,6 @@
     "battery",
     "custom/lock"
   ],
-
-  "custom/app": {
-  "tooltip": false,
-  "on-click": "sh -c 'rofi -show dryrun'",
-  "format" : "󱄅"
-  },
 
   "hyprland/workspaces": {
     "active-only": false,
