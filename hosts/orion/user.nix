@@ -5,6 +5,7 @@
         # gui
         firefox.enable = true;
         ghostty.enable = true;
+        zen-browser.enable = true;
         # eww.enable = true;
         # dunst.enable = true;
 	    sddm.enable = true;

@@ -12,6 +12,12 @@
 
         neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
+        zen-browser = {
+            url = "github:0xc000022070/zen-browser-flake";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.home-manager.follows = "home-manager";
+        };
+
         nur = {
             url = "github:nix-community/NUR";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -45,7 +51,7 @@
                             home-manager = {
                                 useUserPackages = true;
                                 useGlobalPkgs = true;
-				backupFileExtension = "old";
+				                backupFileExtension = "old";
                                 extraSpecialArgs = { inherit inputs; };
                                 # Home manager config (configures programs like firefox, zsh, eww, etc)
                                 users.clement = (./. + "/modules/home.nix");

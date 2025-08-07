@@ -5,9 +5,6 @@ let cfg = osConfig.modules.zen-browser;
 
 in {
     config = mkIf cfg.enable {
-        imports = [ inputs.zen-browser.homeModules.twilight ];
-        programs.zen-browser = {
-            enable = true;
-        };
+        home.packages = [inputs.zen-browser.packages."${pkgs.system}".twilight];
     };
 }

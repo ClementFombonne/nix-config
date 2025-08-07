@@ -4,5 +4,6 @@
     imports = [
         ./firefox
         ./ghostty
+        ./zen-browser
     ];
 }
