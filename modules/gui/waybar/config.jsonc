@@ -121,7 +121,7 @@
   
   "custom/lock": {
   "tooltip": false,
-  "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
+  "on-click": "sh -c 'nwg-bar",
   "format" : ""
   }
 
