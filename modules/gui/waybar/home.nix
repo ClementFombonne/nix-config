@@ -15,9 +15,9 @@ in {
         # nwg-bar
         home.file.".config/nwg-bar/bar.json".source = ./nwg-bar/bar.json;
         home.file.".config/nwg-bar/style.css".source = ./nwg-bar/style.css;
-        home.file.".config/nwg-bar/images/system-lock-screen.svg".source = ./nwg-bar/system-lock-screen.svg;
-        home.file.".config/nwg-bar/images/system-reboot.svg".source = ./nwg-bar/system-reboot.svg;
-        home.file.".config/nwg-bar/images/system-log-out.svg".source = ./nwg-bar/system-log-out.svg;
-        home.file.".config/nwg-bar/images/system-shutdown.svg".source = ./nwg-bar/system-shutdown.svg;
+        home.file.".config/nwg-bar/images/system-lock-screen.svg".source = ./nwg-bar/images/system-lock-screen.svg;
+        home.file.".config/nwg-bar/images/system-reboot.svg".source = ./nwg-bar/images/system-reboot.svg;
+        home.file.".config/nwg-bar/images/system-log-out.svg".source = ./nwg-bar/images/system-log-out.svg;
+        home.file.".config/nwg-bar/images/system-shutdown.svg".source = ./nwg-bar/images/system-shutdown.svg;
     };
 }

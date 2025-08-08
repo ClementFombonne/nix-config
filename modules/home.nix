@@ -10,4 +10,6 @@
 	./dev/home.nix
 	./sys/home.nix
     ];
+    home.file.".config/wallpaper/glass.jpg".source = ../assets/wallpaper.jpg;
+    home.file.".config/wallpaper/glass.png".source = ../assets/wallpaper.png;
 }
