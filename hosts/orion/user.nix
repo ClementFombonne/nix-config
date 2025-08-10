@@ -6,6 +6,7 @@
         firefox.enable = true;
         ghostty.enable = true;
         zen-browser.enable = true;
+        discord.enable = true;
         # eww.enable = true;
         # dunst.enable = true;
 	    sddm.enable = true;

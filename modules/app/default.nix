@@ -5,5 +5,6 @@
         ./firefox
         ./ghostty
         ./zen-browser
+        ./discord
     ];
 }
