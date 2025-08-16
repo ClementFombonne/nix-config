@@ -1,7 +1,7 @@
-import "color.css";
+@import "color.css";
 /* --- Global Styles --- */
 * {
-  font-family: 'JetBrains Mono Nerd Font', sans-serif;
+  font-family: 'JetBrains Nerd Font', sans-serif;
   font-size: 16px;
   min-height: 0;
   padding-right: 0px;
@@ -20,7 +20,7 @@ import "color.css";
 /* --- Left Modules (Individual, Fully Rounded Blocks - With Horizontal Spacing & Simple Hover) --- */
 #workspaces,
 #cpu {
-  background-color: rgba(48, 52, 70, .6);
+  background-color: alpha(@base, .6);
   padding: 0.3rem 0.7rem;
   margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
   margin-right: 5px; /* Spacing after the workspaces module */
@@ -36,7 +36,7 @@ import "color.css";
 }
 
 #memory {
-  background-color: rgba(48, 52, 70, .6);
+  background-color: alpha(@base, .6);
   padding: 0.3rem 0.7rem;
   margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
   border-radius: 6px; /* These modules are always rounded */
@@ -78,7 +78,7 @@ import "color.css";
 
 /* --- Center Module (Individual, Fully Rounded Block - With Simple Hover) --- */
 #clock {
-  background-color: #1a1b26;
+  background-color: alpha(@base, .6);
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
   border-radius: 6px; /* This module is always rounded */
@@ -100,7 +100,7 @@ import "color.css";
 #network,
 #custom-lock,
 #battery {
-  background-color: #1a1b26;
+  background-color: alpha(@base, .6);
   padding: 0.3rem 0.7rem;
   margin: 5px 0px; 
   border-radius: 0;

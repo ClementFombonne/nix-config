@@ -10,7 +10,7 @@ in {
         # waybar config  
         home.file.".config/waybar/config.jsonc".source = ./config.jsonc;
         home.file.".config/waybar/style.css".source = ./style.css;
-        home.file.".config/waybar/frappe.css".source = ./frappe.css;
+        home.file.".config/waybar/color.css".source = ./color.css;
 
         # nwg-bar
         home.file.".config/nwg-bar/bar.json".source = ./nwg-bar/bar.json;
