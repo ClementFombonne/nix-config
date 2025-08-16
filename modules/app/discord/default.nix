@@ -6,7 +6,7 @@ let cfg = config.modules.discord;
 in {
     options.modules.discord = { enable = mkEnableOption "discord"; };
     config = mkIf cfg.enable {
-        environment.systemPackages = with pkgs [
+        environment.systemPackages = with pkgs; [
             discord
         ];
     };
