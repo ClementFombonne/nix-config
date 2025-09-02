@@ -4,7 +4,7 @@ let
     cfg = config.modules.obsidian;
 
 in {
-    options.modules.firefox = { enable = mkEnableOption "obsidian"; };
+    options.modules.obsidian = { enable = mkEnableOption "obsidian"; };
 
     config = mkIf cfg.enable {
         environment.systemPackages = with pkgs; [
