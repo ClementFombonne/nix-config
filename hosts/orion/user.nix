@@ -5,6 +5,7 @@
         # gui
         firefox.enable = true;
         ghostty.enable = true;
+        obsidian.enable = true;
         zen-browser.enable = true;
         discord.enable = true;
         # eww.enable = true;

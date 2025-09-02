@@ -6,5 +6,6 @@
         ./ghostty/home.nix
         ./zen-browser/home.nix
         ./discord/home.nix
+        ./obsidian/home.nix
     ];
 }

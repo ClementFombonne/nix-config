@@ -6,5 +6,6 @@
         ./ghostty
         ./zen-browser
         ./discord
+        ./obsidian
     ];
 }
