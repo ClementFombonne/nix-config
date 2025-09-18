@@ -4,7 +4,7 @@ with lib;
 let cfg = config.modules.keymapp;
 
 in {
-    options.modules.discord = { enable = mkEnableOption "keymapp"; };
+    options.modules.keymapp = { enable = mkEnableOption "keymapp"; };
     config = mkIf cfg.enable {
         environment.systemPackages = with pkgs; [
             keymapp
