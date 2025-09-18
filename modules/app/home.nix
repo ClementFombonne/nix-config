@@ -7,5 +7,6 @@
         ./zen-browser/home.nix
         ./discord/home.nix
         ./obsidian/home.nix
+        ./keymapp/home.nix
     ];
 }

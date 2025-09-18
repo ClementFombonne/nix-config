@@ -7,5 +7,6 @@
         ./zen-browser
         ./discord
         ./obsidian
+        ./keymapp
     ];
 }

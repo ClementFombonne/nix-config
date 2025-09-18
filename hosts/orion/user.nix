@@ -2,14 +2,16 @@
 
 {
     config.modules = {
-        # gui
+        # app
         firefox.enable = true;
         ghostty.enable = true;
         obsidian.enable = true;
         zen-browser.enable = true;
         discord.enable = true;
+        keymapp.enable = true;
         # eww.enable = true;
         # dunst.enable = true;
+        # gui
 	    sddm.enable = true;
         hyprland.enable = true;
 	    waybar.enable = true;
