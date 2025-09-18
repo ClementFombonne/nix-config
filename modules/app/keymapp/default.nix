@@ -9,5 +9,6 @@ in {
         environment.systemPackages = with pkgs; [
             keymapp
         ];
+        hardware.keyboard.zsa.enable = true;
     };
 }
