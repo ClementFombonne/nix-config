@@ -3,10 +3,11 @@
 {
     imports = [
         ./dunst
-	./eww
+	    ./eww
         ./hyprland
-	./sddm
-	./waybar
+	    ./sddm
+        ./gdm
+	    ./waybar
         ./rofi
     ];
 }
