@@ -4,5 +4,6 @@
     imports = [
         ./python-uv
         ./gcc
+        ./apptainer
     ];
 }

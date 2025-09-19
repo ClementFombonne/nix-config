@@ -12,8 +12,10 @@
         # dev
         python-uv.enable = true;
         gcc.enable = true;
+        apptainer.enable = true 
         # gui
 	    sddm.enable = true;
+        # gdm.enable = true;
         hyprland.enable = true;
 	    waybar.enable = true;
         rofi.enable = true;
