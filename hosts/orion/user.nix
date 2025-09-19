@@ -9,13 +9,15 @@
         zen-browser.enable = true;
         discord.enable = true;
         keymapp.enable = true;
-        # eww.enable = true;
-        # dunst.enable = true;
+        # dev
+        python-uv.enable = true;
         # gui
 	    sddm.enable = true;
         hyprland.enable = true;
 	    waybar.enable = true;
         rofi.enable = true;
+        # eww.enable = true;
+        # dunst.enable = true;
 
         # cli
         nvim.enable = true;
