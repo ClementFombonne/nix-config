@@ -3,5 +3,6 @@
 {
     imports = [
         ./python-uv/home.nix
+        ./gcc/home.nix
     ];
 }

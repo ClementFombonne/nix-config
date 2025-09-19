@@ -11,6 +11,7 @@
         keymapp.enable = true;
         # dev
         python-uv.enable = true;
+        gcc.enable = true;
         # gui
 	    sddm.enable = true;
         hyprland.enable = true;
