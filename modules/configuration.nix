@@ -20,7 +20,7 @@
     # base packages
     programs.zsh.enable = true;
     environment.systemPackages = with pkgs; [
-        acpi vim git gnumake
+        acpi vim git gnumake ffmpeg
     ];
     # Install fonts
     fonts = {
@@ -131,18 +131,20 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
+        jack.enable = true;
     };
     services.blueman.enable = true;
     
     hardware = {
         bluetooth.enable = true;
-	graphics.enable = true;
-	graphics.extraPackages = with pkgs; [
-	  mesa
-	  libvdpau-va-gl
-	  vaapiVdpau
-	  intel-media-driver
-	];
+        graphics.enable = true;
+        graphics.extraPackages = with pkgs; [
+            mesa
+            vaapiVdpau
+            intel-media-driver
+            intel-vaapi-driver
+            libvdpau-va-gl
+        ];
     };
 
     # Do not touch

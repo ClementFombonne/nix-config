@@ -22,10 +22,15 @@
             url = "github:nix-community/NUR";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        nixos-hardware = {
+            url = "github:NixOS/nixos-hardware/master";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     # All outputs for the system (configs)
-    outputs = { home-manager, nixpkgs, nur, ... }@inputs: 
+    outputs = { home-manager, nixpkgs, nur, nixos-hardware, ... }@inputs: 
         let
             system = "x86_64-linux"; #current system
             pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
@@ -34,7 +39,7 @@
             # This lets us reuse the code to "create" a system
             # Credits go to sioodmy on this one!
             # https://github.com/sioodmy/dotfiles/blob/main/flake.nix
-            mkSystem = pkgs: system: hostname:
+            mkSystem = pkgs: system: hostname: model:
                 pkgs.lib.nixosSystem {
                     system = system;
                     modules = [
@@ -57,6 +62,7 @@
                                 users.clement = (./. + "/modules/home.nix");
                             };
                         }
+                        nixos-hardware.nixosModules.${model}
                     ];
                     specialArgs = { inherit inputs; };
                 };
@@ -65,7 +71,7 @@
             nixosConfigurations = {
                 # Now, defining a new system is can be done in one line
                 #                               Architecture   Hostname
-                orion = mkSystem inputs.nixpkgs "x86_64-linux" "orion";
+                orion = mkSystem inputs.nixpkgs "x86_64-linux" "orion" "lenovo-yoga-7-14IAH7-integrated";
             };
     };
 }
