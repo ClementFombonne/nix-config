@@ -9,5 +9,6 @@
         ./gdm
 	    ./waybar
         ./rofi
+        ./nmgui
     ];
 }
