@@ -8,6 +8,9 @@ in {
     config = mkIf cfg.enable {
         programs.tmux = {
                 enable = true;
+                clock24 = true;
+                shortcut = "q";
+                baseIndex = 1;
                 plugins =  with pkgs.tmuxPlugins; [
                     sensible
                     catppuccin
