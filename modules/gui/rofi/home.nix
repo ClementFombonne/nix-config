@@ -7,7 +7,6 @@ in {
     config = mkIf cfg.enable {
         programs.rofi = {
             enable = true;
-            package = pkgs.rofi-wayland; 
 	    theme = ./themes/theme.rasi;
             extraConfig = {
 	        modi = "drun,run,filebrowser,window,ssh";
