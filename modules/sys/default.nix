@@ -5,5 +5,6 @@
         ./xdg
 	    ./zsh
         ./oh-my-posh
+        ./tmux
     ];
 }
