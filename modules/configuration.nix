@@ -20,7 +20,7 @@
     # base packages
     programs.zsh.enable = true;
     environment.systemPackages = with pkgs; [
-        acpi vim git
+        acpi vim git gnumake
     ];
     # Install fonts
     fonts = {
