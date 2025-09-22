@@ -9,6 +9,7 @@
         zen-browser.enable = true;
         discord.enable = true;
         keymapp.enable = true;
+        signal.enable = true;
         # dev
         python-uv.enable = true;
         gcc.enable = true;

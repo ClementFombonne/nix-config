@@ -8,5 +8,6 @@
         ./discord
         ./obsidian
         ./keymapp
+        ./signal
     ];
 }
