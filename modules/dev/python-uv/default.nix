@@ -8,6 +8,7 @@ in {
     config = mkIf cfg.enable {
         environment.systemPackages = with pkgs; [
             uv
+            python312
         ];
         programs.nix-ld.enable = true;
     };
