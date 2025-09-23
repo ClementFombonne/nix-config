@@ -9,7 +9,6 @@ in {
         environment.systemPackages = with pkgs; [(
             sddm-astronaut.override {
                 themeConfig = {
-                    Background = "/home/clement/.config/wallpaper/glass.png";
                     ScreenWidth = "3072";
                     ScreenHeight = "1920";
                 };
@@ -18,6 +17,7 @@ in {
         services.xserver.enable = true;
         services.displayManager.sddm = {
             enable = true;
+            wayland.enable = true;
             theme = "sddm-astronaut-theme";
 	        package = pkgs.kdePackages.sddm;
             extraPackages = [ pkgs.sddm-astronaut ];
