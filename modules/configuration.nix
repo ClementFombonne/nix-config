@@ -20,7 +20,7 @@
     # base packages
     programs.zsh.enable = true;
     environment.systemPackages = with pkgs; [
-        acpi vim git gnumake ffmpeg
+        acpi vim git gnumake ffmpeg-full vlc
     ];
     # Install fonts
     fonts = {

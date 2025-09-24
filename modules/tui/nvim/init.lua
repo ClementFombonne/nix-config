@@ -29,7 +29,6 @@ require('gitsigns').setup()
 
 -- Mason setup
 require('mason').setup()
-require("mason-lspconfig").setup()
 
 -- MiniVim setup
 require('mini.basics').setup()
