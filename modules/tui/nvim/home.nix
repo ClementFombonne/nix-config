@@ -13,10 +13,22 @@ in {
                 catppuccin-nvim
                 noice-nvim
                 gitsigns-nvim
+                nvim-lspconfig
                 mini-nvim
-                mason-nvim
+                nvim-cmp
+                cmp-nvim-lsp
+                cmp-buffer
+                cmp-path
+                cmp_luasnip
+                luasnip
             ];
-	};
+            extraPackages = with pkgs; [
+                lua-language-server
+                pyright
+                rust-analyzer
+                clang-tools
+            ];
+        };
         home.file.".config/nvim/init.lua".source = ./init.lua;
     };
 }
