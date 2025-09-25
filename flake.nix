@@ -26,6 +26,10 @@
         nixos-hardware = {
             url = "github:NixOS/nixos-hardware/master";
         };
+        LazyVim = {
+            url = "github:albertlarsan68/LazyVim-module";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     # All outputs for the system (configs)

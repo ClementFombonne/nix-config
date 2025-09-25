@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "LazyVim": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1756556058,
+        "narHash": "sha256-sVPjaYbpDil8vuaBlXZyyO7A7f1PqDRKJ9VM+eSNH3U=",
+        "owner": "albertlarsan68",
+        "repo": "LazyVim-module",
+        "rev": "b177e9fbc358707968150752ac85d6c6f342cf16",
+        "type": "github"
+      },
+      "original": {
+        "owner": "albertlarsan68",
+        "repo": "LazyVim-module",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -293,12 +314,28 @@
     },
     "root": {
       "inputs": {
+        "LazyVim": "LazyVim",
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
         "zen-browser": "zen-browser"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "type": "github"
       }
     },
     "treefmt-nix": {
