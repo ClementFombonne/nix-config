@@ -9,5 +9,6 @@
         ./obsidian
         ./keymapp
         ./signal
+        ./vs-code
     ];
 }

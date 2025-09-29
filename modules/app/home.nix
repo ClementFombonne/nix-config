@@ -8,5 +8,6 @@
         ./discord/home.nix
         ./obsidian/home.nix
         ./keymapp/home.nix
+        ./vs-code/home.nix
     ];
 }

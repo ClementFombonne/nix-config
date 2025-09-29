@@ -10,6 +10,7 @@
         discord.enable = true;
         keymapp.enable = true;
         signal.enable = true;
+        vs-code.enable = true;
         # dev
         python-uv.enable = true;
         gcc.enable = true;

@@ -6,10 +6,15 @@ in {
     imports = [ inputs.LazyVim.homeManagerModules.default ];
     config = mkIf cfg.enable {
         programs.lazyvim = {
-            enable = true;
+          enable = true;
+          extras = {
+            lang = {
+              clangd.enable = true;
+            };
+          };
         };
         home.shellAliases = {
-            vim = "nvim";
+          vim = "nvim";
         };
     };
 }
