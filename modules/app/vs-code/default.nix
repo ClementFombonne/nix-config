@@ -10,11 +10,13 @@ in {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         ms-vscode-remote.remote-ssh
+        ms-vscode.remote-explorer
         vscodevim.vim
-        ms-python.python
         ms-vscode.cpptools
+        ms-python.python
+        charliermarsh.ruff
       ];
-      environment.sessionVariables.NIXOS_OZONE_WL = "1";
     };
-  }
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  };
 }
