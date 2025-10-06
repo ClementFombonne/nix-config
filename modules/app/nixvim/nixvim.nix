@@ -21,8 +21,7 @@ in
     ./plugins/treesitter.nix
     ./plugins/lint.nix
     ./plugins/autopairs.nix
-    ./plugins/neo-tree.nix
-
+    ./plugins/remote-nvim.nix
     #
     # NOTE: Configure your own plugins `see https://nix-community.github.io/nixvim/`
     # Add your plugins to ./config/plugins/custom and import them below

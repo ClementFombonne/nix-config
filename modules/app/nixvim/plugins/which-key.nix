@@ -9,6 +9,7 @@
       # delay between pressing a key and opening which-key (milliseconds)
       # this setting is independent of vim.opt.timeoutlen
       delay = 0;
+      preset = "helix";
       spec = [
         {
           __unkeyed-1 = "<leader>s";
