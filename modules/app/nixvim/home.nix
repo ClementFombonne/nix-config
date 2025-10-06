@@ -10,6 +10,17 @@ in {
             enable = true;
             colorschemes.catppuccin.enable = true;
             plugins.lualine.enable = true;
+            globals = {
+                mapleader = " ";
+                maplocalleader = " ";
+                have_nerd_font = true;
+            };
+            clipboard = {
+                providers = {
+                    wl-copy.enable = true;
+                };
+                register = "unnamedplus";
+            };
             opts = {
                 # number
                 number = true;
@@ -26,6 +37,7 @@ in {
                 cursorline = true;
                 scrolloff = 6;
                 cmdheight = 0;
+                mouse = "a";
             };
         };
     };
