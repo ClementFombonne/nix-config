@@ -11,5 +11,6 @@
         ./signal
         ./vs-code
         ./nixvim
+	./steam
     ];
 }
