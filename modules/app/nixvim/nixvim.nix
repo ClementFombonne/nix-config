@@ -10,18 +10,18 @@ in
 {
   imports = [
     # Plugins
-    ./config/plugins/kickstart/gitsigns.nix
-    ./config/plugins/kickstart/which-key.nix
-    ./config/plugins/kickstart/telescope.nix
-    ./config/plugins/kickstart/lsp.nix
-    ./config/plugins/kickstart/conform.nix
-    ./config/plugins/kickstart/blink-cmp.nix
-    ./config/plugins/kickstart/todo-comments.nix
-    ./config/plugins/kickstart/mini.nix
-    ./config/plugins/kickstart/treesitter.nix
-    ./config/plugins/kickstart/lint.nix
-    ./config/plugins/kickstart/autopairs.nix
-    ./config/plugins/kickstart/neo-tree.nix
+    ./plugins/gitsigns.nix
+    ./plugins/which-key.nix
+    ./plugins/telescope.nix
+    ./plugins/lsp.nix
+    ./plugins/conform.nix
+    ./plugins/blink-cmp.nix
+    ./plugins/todo-comments.nix
+    ./plugins/mini.nix
+    ./plugins/treesitter.nix
+    ./plugins/lint.nix
+    ./plugins/autopairs.nix
+    ./plugins/neo-tree.nix
 
     #
     # NOTE: Configure your own plugins `see https://nix-community.github.io/nixvim/`
