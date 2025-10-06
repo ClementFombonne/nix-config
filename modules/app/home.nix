@@ -9,6 +9,6 @@
         ./obsidian/home.nix
         ./keymapp/home.nix
         ./vs-code/home.nix
-        ./nixvim/home.nix
+        # ./nixvim/home.nix
     ];
 }

@@ -58,6 +58,7 @@
                         # DO NOT USE MY HARDWARE CONFIG!! USE YOUR OWN!!
                         (./. + "/hosts/${hostname}/hardware-configuration.nix")
                         (./. + "/hosts/${hostname}/user.nix")
+                        nixvim.nixosModules.nixvim
                         home-manager.nixosModules.home-manager
                         {
                             home-manager = {
