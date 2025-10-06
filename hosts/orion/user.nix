@@ -11,6 +11,7 @@
         keymapp.enable = true;
         signal.enable = true;
         vs-code.enable = true;
+        nixvim.enable = true;
         # dev
         python-uv.enable = true;
         gcc.enable = true;
@@ -26,7 +27,7 @@
         # dunst.enable = true;
 
         # cli
-        nvim.enable = true;
+        # nvim.enable = true;
         zsh.enable = true;
         oh-my-posh.enable = true;
         git.enable = true;

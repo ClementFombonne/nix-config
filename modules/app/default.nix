@@ -10,5 +10,6 @@
         ./keymapp
         ./signal
         ./vs-code
+        ./nixvim
     ];
 }

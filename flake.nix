@@ -30,10 +30,14 @@
             url = "github:albertlarsan68/LazyVim-module";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        nixvim = {
+            url = "github:nix-community/nixvim";
+            # inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     # All outputs for the system (configs)
-    outputs = { home-manager, nixpkgs, nur, nixos-hardware, ... }@inputs: 
+    outputs = { home-manager, nixpkgs, nur, nixos-hardware, nixvim, ... }@inputs: 
         let
             system = "x86_64-linux"; #current system
             pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
@@ -59,7 +63,7 @@
                             home-manager = {
                                 useUserPackages = true;
                                 useGlobalPkgs = true;
-				                backupFileExtension = "old";
+                                backupFileExtension = "old";
                                 extraSpecialArgs = { inherit inputs; };
                                 # Home manager config (configures programs like firefox, zsh, eww, etc)
                                 users.clement = (./. + "/modules/home.nix");

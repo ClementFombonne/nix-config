@@ -5,6 +5,7 @@
     boot = {
         tmp.cleanOnBoot = true;
         loader.systemd-boot.enable = true;
+        loader.systemd-boot.consoleMode = "0";
         loader.efi.canTouchEfiVariables = true;
         kernelModules = [ "i915" ];
         initrd.kernelModules = [ "i915" ];
