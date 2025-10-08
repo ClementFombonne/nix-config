@@ -36,20 +36,20 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   overflow = 'hidden'
 
   [[blocks.segments]]
-    type = 'python'
-    style = 'plain'
-    foreground = 'p:grey'
-    background = 'transparent'
-    template = '{{ .Venv }}'
-  [[blocks.segments]]
     type = 'executiontime'
     style = 'plain'
     foreground = 'yellow'
     background = 'transparent'
     template = '{{ .FormattedMs }}'
-
     [blocks.segments.properties]
       threshold = 5000
+
+  [[blocks.segments]]
+    type = 'python'
+    style = 'plain'
+    foreground = 'p:grey'
+    background = 'transparent'
+    template = ' {{ if .Venv }} {{ .Venv }} {{ .Major }}.{{ .Minor }}{{ end }} '
 
 [[blocks]]
   type = 'prompt'
