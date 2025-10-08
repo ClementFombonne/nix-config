@@ -32,6 +32,8 @@ in
   # Don't forget to disable the colorschemes you arent using
   #
   # If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  viAlias = true;
+  vimAlias = true;
   colorschemes = {
     # https://nix-community.github.io/nixvim/colorschemes/tokyonight/index.html
     catppuccin = {

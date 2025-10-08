@@ -36,6 +36,12 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   overflow = 'hidden'
 
   [[blocks.segments]]
+    type = 'python'
+    style = 'plain'
+    foreground = 'p:grey'
+    background = 'transparent'
+    template = '{{ .Venv }}'
+  [[blocks.segments]]
     type = 'executiontime'
     style = 'plain'
     foreground = 'yellow'

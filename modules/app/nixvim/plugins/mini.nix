@@ -15,6 +15,7 @@
         n_lines = 500;
       };
       files = { };
+      tabline = { };
       starter = {
         content_hooks = {
           "__unkeyed-1.adding_bullet" = {
