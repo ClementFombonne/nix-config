@@ -1,14 +1,25 @@
-{ inputs, pkgs, config, osConfig, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  osConfig,
+  ...
+}:
 
 {
-    imports = [
-        ./dunst
-	    ./eww
-        ./hyprland
-	    ./sddm
-        ./gdm
-	    ./waybar
-        ./rofi
-        ./nmgui
-    ];
+  imports = [
+    ../../packages/wallpaper.nix
+    ./dunst
+    ./eww
+    ./hyprland
+    ./sddm
+    ./gdm
+    ./waybar
+    ./rofi
+    ./nmgui
+  ];
+  services.wallpaper = {
+    enable = true;
+    image = ../../assets/wallpaper.jpg;
+  };
 }

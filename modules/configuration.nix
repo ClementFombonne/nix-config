@@ -35,6 +35,9 @@
     gnumake
     ffmpeg-full
     vlc
+    zip
+    btop
+    file
   ];
   # Install fonts
   fonts = {
