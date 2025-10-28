@@ -22,6 +22,7 @@ in
     ./plugins/lint.nix
     ./plugins/autopairs.nix
     ./plugins/remote-nvim.nix
+    ./plugins/noice.nix
     #
     # NOTE: Configure your own plugins `see https://nix-community.github.io/nixvim/`
     # Add your plugins to ./config/plugins/custom and import them below
@@ -38,6 +39,7 @@ in
     # https://nix-community.github.io/nixvim/colorschemes/tokyonight/index.html
     catppuccin = {
       enable = true;
+      settings.transparent_background = true;
     };
   };
 

@@ -1,9 +1,15 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 
 {
-    imports = [
-        ./python-uv
-        ./gcc
-        ./apptainer
-    ];
+  imports = [
+    ./python-uv
+    ./gcc
+    ./apptainer
+    ./rust
+  ];
 }

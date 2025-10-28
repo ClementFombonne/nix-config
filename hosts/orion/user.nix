@@ -22,6 +22,7 @@
     python-uv.enable = true;
     gcc.enable = true;
     apptainer.enable = true;
+    rust.enable = true;
     # gui
     sddm.enable = true;
     plymouth.enable = true;
