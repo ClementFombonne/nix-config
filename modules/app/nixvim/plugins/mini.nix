@@ -79,4 +79,18 @@
       return '%2l:%-2v'
     end
   '';
+  keymaps = [
+    {
+      mode = "";
+      key = "<leader>e";
+      action.__raw = ''
+        function()
+          if not MiniFiles.close() then MiniFiles.open() end
+        end
+      '';
+      options = {
+        desc = "[E]xplore";
+      };
+    }
+  ];
 }

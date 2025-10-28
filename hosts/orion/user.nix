@@ -24,6 +24,7 @@
     apptainer.enable = true;
     # gui
     sddm.enable = true;
+    plymouth.enable = true;
     # gdm.enable = true;
     hyprland.enable = true;
     waybar.enable = true;

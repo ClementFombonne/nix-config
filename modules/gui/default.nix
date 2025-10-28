@@ -8,7 +8,6 @@
 
 {
   imports = [
-    ../../packages/wallpaper.nix
     ./dunst
     ./eww
     ./hyprland
@@ -17,9 +16,6 @@
     ./waybar
     ./rofi
     ./nmgui
+    ./plymouth
   ];
-  services.wallpaper = {
-    enable = true;
-    image = ../../assets/wallpaper.jpg;
-  };
 }
