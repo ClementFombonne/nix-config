@@ -16,7 +16,8 @@ in
   };
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      rust-bin.stable.latest
+      rustc
+      cargo
       rust-analyzer
       rustup
       clippy
