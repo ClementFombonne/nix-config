@@ -1,3 +1,5 @@
+{ nixosConfig, ... }:
+
 {
   pkgs,
   lib,
@@ -9,11 +11,11 @@ let
 in
 {
   imports = [
+    (import ./lsp.nix { inherit nixosConfig; })
     # Plugins
     ./plugins/gitsigns.nix
     ./plugins/which-key.nix
     ./plugins/telescope.nix
-    ./plugins/lsp.nix
     ./plugins/conform.nix
     ./plugins/blink-cmp.nix
     ./plugins/todo-comments.nix

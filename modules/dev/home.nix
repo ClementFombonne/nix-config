@@ -1,9 +1,12 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 
 {
-    imports = [
-        ./python-uv/home.nix
-        ./gcc/home.nix
-        ./apptainer/home.nix
-    ];
+  imports = [
+    ./apptainer/home.nix
+  ];
 }
