@@ -1,9 +1,15 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 
 {
-    imports = [
-        ./direnv
-	./git
-	./packages
-    ];
+  imports = [
+    ./direnv
+    ./git
+    ./packages
+    ./gemini-cli
+  ];
 }

@@ -42,7 +42,8 @@
     zsh.enable = true;
     oh-my-posh.enable = true;
     git.enable = true;
-    # direnv.enable = true;
+    gemini-cli.enable = true;
+    direnv.enable = true;
 
     # system
     xdg.enable = true;
