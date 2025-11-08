@@ -19,6 +19,6 @@ in
       l = "eza --icons=auto -la";
       tree = "eza --icons=auto --tree";
     };
+    home.file.".config/fastfetch/config.jsonc".source = ./config.jsonc;
   };
-  home.file.".config/fastfetch/config.jsonc".source = ./config.jsonc;
 }
