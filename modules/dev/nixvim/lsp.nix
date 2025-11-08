@@ -57,7 +57,11 @@ in
 
       # ----- Rust -------------------------------------------------------
       (mkIf rustCfg.enable {
-        rust_analyzer.enable = true;
+        rust_analyzer = {
+          enable = true;
+          installCargo = false;
+          installRustc = false;
+        };
       })
 
       # ----- Miscellaneous (always on) ---------------------------------
