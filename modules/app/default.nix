@@ -1,16 +1,20 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 
 {
-    imports = [
-        ./firefox
-        ./ghostty
-        ./zen-browser
-        ./discord
-        ./obsidian
-        ./keymapp
-        ./signal
-        ./vs-code
-        ./nixvim
-	./steam
-    ];
+  imports = [
+    ./firefox
+    ./ghostty
+    ./zen-browser
+    ./discord
+    ./obsidian
+    ./keymapp
+    ./signal
+    ./vs-code
+    ./steam
+  ];
 }

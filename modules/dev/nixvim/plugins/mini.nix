@@ -14,6 +14,8 @@
       ai = {
         n_lines = 500;
       };
+      cursorword = { };
+      indentscope = { };
       files = { };
       tabline = { };
       starter = {

@@ -16,13 +16,16 @@
     keymapp.enable = true;
     signal.enable = true;
     vs-code.enable = true;
-    nixvim.enable = true;
     steam.enable = true;
     # dev
-    python-uv.enable = true;
-    gcc.enable = true;
     apptainer.enable = true;
-    rust.enable = true;
+    nixvim.enable = true;
+    language = {
+      gcc.enable = true;
+      python.enable = true;
+      rust.enable = true;
+      typst.enable = true;
+    };
     # gui
     sddm.enable = true;
     plymouth.enable = true;

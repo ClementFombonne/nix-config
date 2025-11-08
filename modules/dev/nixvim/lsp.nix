@@ -1,17 +1,25 @@
-{ pkgs, ... }:
+{ nixosConfig }:
+
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+with lib;
+let
+  gccCfg = nixosConfig.modules.language.gcc;
+  pythonCfg = nixosConfig.modules.language.python;
+  typstCfg = nixosConfig.modules.language.typst;
+  rustCfg = nixosConfig.modules.language.rust;
+in
 {
   # Useful status updates for LSP.
   # https://nix-community.github.io/nixvim/plugins/fidget/index.html
-  plugins.fidget = {
-    enable = true;
-  };
+  plugins.fidget.enable = true;
 
   # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
-  autoGroups = {
-    "kickstart-lsp-attach" = {
-      clear = true;
-    };
-  };
+  autoGroups."kickstart-lsp-attach".clear = true;
 
   # A plugin that properly configures LuaLS for editing your Neovim config
   #  by lazily updating your workspace libraries.
@@ -28,92 +36,48 @@
     };
   };
 
-  # Brief aside: **What is LSP?**
-  #
-  # LSP is an initialism you've probably heard, but might not understand what it is.
-  #
-  # LSP stands for Language Server Protocol. It's a protocol that helps editors
-  # and language tooling communicate in a standardized fashion.
-  #
-  # In general, you have a "server" which is some tool built to understand a particular
-  # language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). These Language Servers
-  # (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
-  # processes that communicate with some "client" - in this case, Neovim!
-  #
-  # LSP provides Neovim with features like:
-  #  - Go to definition
-  #  - Find references
-  #  - Autocompletion
-  #  - Symbol Search
-  #  - and more!
-  #
-  # Thus, Language Servers are external tools that must be installed separately from
-  # Neovim which are configured below in the `server` section.
-  #
-  # If you're wondering about lsp vs treesitter, you can check out the wonderfully
-  # and elegantly composed help section, `:help lsp-vs-treesitter`
-  #
-  # https://nix-community.github.io/nixvim/plugins/lsp/index.html
   plugins.lsp = {
     enable = true;
 
-    # Enable the following language servers
-    #  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-    #
-    #  Add any additional override configuration in the following tables. Available keys are:
-    #  - cmd: Override the default command used to start the server
-    #  - filetypes: Override the default list of associated filetypes for the server
-    #  - capabilities: Override fields in capabilities. Can be used to disable certain LSP features.
-    #  - settings: Override the default settings passed when initializing the server.
-    #        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-    servers = {
-      clangd = {
-        enable = true;
-      };
-      # gopls = {
-      #   enable = true;
-      # };
-      pyright = {
-        enable = true;
-      };
-      rust_analyzer = {
-        enable = true;
-      };
-      # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
-      #
-      # Some languages (like typscript) have entire language plugins that can be useful:
-      #    `https://nix-community.github.io/nixvim/plugins/typescript-tools/index.html?highlight=typescript-tools#pluginstypescript-toolspackage`
-      #
-      # But for many setups the LSP (`ts_ls`) will work just fine
-      # ts_ls = {
-      #   enable = true;
-      # };
+    servers = mkMerge [
+      # ----- C / C++ ---------------------------------------------------
+      (mkIf gccCfg.enable {
+        clangd.enable = true;
+      })
 
-      # Nix lsp
-      nil_ls = {
-        enable = true;
-      };
+      # ----- Python ----------------------------------------------------
+      (mkIf pythonCfg.enable {
+        pyright.enable = true;
+      })
 
-      # Lua lsp
-      lua_ls = {
-        enable = true;
+      # ----- Typst ------------------------------------------------------
+      (mkIf typstCfg.enable {
+        tinymist.enable = true;
+      })
 
-        # cmd = {
-        # };
-        # filetypes = {
-        # };
-        settings = {
-          completion = {
-            callSnippet = "Replace";
-          };
-          # diagnostics = {
-          #   disable = [
-          #     "missing-fields"
-          #   ];
-          # };
+      # ----- Rust -------------------------------------------------------
+      (mkIf rustCfg.enable {
+        rust_analyzer = {
+          enable = true;
+          installCargo = false;
+          installRustc = false;
         };
-      };
-    };
+      })
+
+      # ----- Miscellaneous (always on) ---------------------------------
+      {
+        # Lua LS – useful for editing your init.lua / config.nix
+        lua_ls = {
+          enable = true;
+          settings = {
+            completion.callSnippet = "Replace";
+          };
+        };
+
+        # Nil (Nix) – keep it on unless you explicitly want to hide it
+        nil_ls.enable = true;
+      }
+    ];
 
     keymaps = {
       # Diagnostic keymaps
