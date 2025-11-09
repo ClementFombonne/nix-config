@@ -160,10 +160,10 @@
     graphics.enable = true;
     graphics.extraPackages = with pkgs; [
       mesa
-      vaapiVdpau
       intel-media-driver
       intel-vaapi-driver
       libvdpau-va-gl
+      libva-vdpau-driver
     ];
   };
 

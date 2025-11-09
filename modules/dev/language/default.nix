@@ -65,7 +65,7 @@ in
     (mkIf typstCfg.enable {
       environment.systemPackages = with pkgs; [
         typst
-        typst-fmt
+        typstyle
       ];
     })
 
