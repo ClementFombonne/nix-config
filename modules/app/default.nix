@@ -16,5 +16,6 @@
     ./signal
     ./vs-code
     ./steam
+    ./brave
   ];
 }

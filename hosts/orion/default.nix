@@ -12,6 +12,7 @@
     ghostty.enable = true;
     obsidian.enable = true;
     zen-browser.enable = true;
+    brave.enable = true;
     discord.enable = true;
     keymapp.enable = true;
     signal.enable = true;
