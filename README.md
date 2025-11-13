@@ -1,4 +1,4 @@
-# My NixOS Configuration
+# ❄️ My NixOS Configuration
 
 This repository contains my personal NixOS configuration, managed declaratively using [Nix Flakes](https://nixos.wiki/wiki/Flakes) and [Home Manager](https://github.com/nix-community/home-manager). It's designed to be modular, easily extensible, and reproducible.
 

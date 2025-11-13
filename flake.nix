@@ -9,7 +9,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     zen-browser = {
@@ -17,7 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,10 +23,6 @@
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
-    };
-    LazyVim = {
-      url = "github:albertlarsan68/LazyVim-module";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
       url = "github:nix-community/nixvim";

@@ -1,12 +1,16 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 
 {
-    imports = [
-	./gui
-	./tui
-	./cli
-	./app
-	./dev
-	./sys
-    ];
+  imports = [
+    ./gui
+    ./cli
+    ./app
+    ./dev
+    ./sys
+  ];
 }
