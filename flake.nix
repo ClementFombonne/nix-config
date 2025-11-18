@@ -56,7 +56,7 @@
             { networking.hostName = hostname; }
             # General configuration (users, networking, sound, etc)
             home-manager.nixosModules.home-manager
-            nixos-hardware.nixosModules.${model}
+            #nixos-hardware.nixosModules.${model}
             nixvim.nixosModules.nixvim
             # Personal configuration
             ./modules/default.nix
@@ -85,6 +85,7 @@
         # Now, defining a new system is can be done in one line
         #                               Architecture   Hostname
         orion = mkSystem inputs.nixpkgs "x86_64-linux" "orion" "lenovo-yoga-7-14IAH7-integrated";
+	heracles = mkSystem inputs.nixpkgs "x86_64-linux" "heracles" "NONE";
       };
     };
 }
