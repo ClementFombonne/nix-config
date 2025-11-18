@@ -6,5 +6,6 @@
 	    ./zsh
         ./oh-my-posh
         ./tmux
+        ./nvidia
     ];
 }
