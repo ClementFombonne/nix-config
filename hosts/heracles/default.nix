@@ -20,7 +20,7 @@
     steam.enable = true;
     # dev
     apptainer.enable = true;
-    #nixvim.enable = true;
+    nixvim.enable = true;
     language = {
       gcc.enable = true;
       python.enable = true;
