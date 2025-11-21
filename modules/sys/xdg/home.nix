@@ -7,14 +7,14 @@ in {
     config = mkIf cfg.enable {
         xdg.userDirs = {
             enable = true;
-            documents = "$HOME/Data/documents/";
-            download = "$HOME/Data/download/";
-            videos = "$HOME/Data/videos/";
-            music = "$HOME/Data/music/";
-            pictures = "$HOME/Data/pictures/";
-            desktop = "$HOME/Data/documents/";
-            publicShare = "$HOME/Data/documents/";
-            templates = "$HOME/Data/documents/";
+            documents = "$HOME/documents/";
+            desktop = "$HOME/documents/";
+            download = "$HOME/download/";
+            videos = "$HOME/media/videos/";
+            pictures = "$HOME/media/pictures/";
+            music = "$HOME/media/music/";
+            templates = "$HOME/.template/";
+            publicShare = "$HOME/public/";
         };
     };
 }
