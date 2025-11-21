@@ -39,6 +39,8 @@
     btop
     file
   ];
+  programs.nix-ld.enable = true; # need to run some binary
+
   # Install fonts
   fonts = {
     packages = with pkgs; [
@@ -124,6 +126,7 @@
     DIRENV_LOG_FORMAT = "";
     ANKI_WAYLAND = "1";
     DISABLE_QT5_COMPAT = "0";
+    SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
   };
 
   # Security
