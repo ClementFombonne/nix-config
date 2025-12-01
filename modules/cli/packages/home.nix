@@ -18,6 +18,7 @@ in
       ll = "eza --icons=auto -l --git --total-size";
       l = "eza --icons=auto -la";
       tree = "eza --icons=auto --tree";
+      ff = "fastfetch --logo-type data --logo $(grep '^NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '\"' | figlet -f slant)";
     };
     home.file.".config/fastfetch/config.jsonc".source = ./config.jsonc;
   };

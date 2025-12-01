@@ -32,8 +32,9 @@
     plymouth.enable = true;
     # gdm.enable = true;
     hyprland.enable = true;
-    waybar.enable = true;
-    rofi.enable = true;
+    noctalia-shell.enable = true;
+    # waybar.enable = true;
+    # rofi.enable = true;
     nmgui.enable = true;
     # eww.enable = true;
     # dunst.enable = true;

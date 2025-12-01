@@ -21,6 +21,7 @@ in
       htop
       fzf
       fastfetch
+      figlet
       eza
       bat
       unzip

@@ -17,5 +17,6 @@
     ./rofi
     ./nmgui
     ./plymouth
+    ./noctalia
   ];
 }

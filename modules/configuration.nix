@@ -28,6 +28,13 @@
     enable = true;
     enableZshIntegration = true;
   };
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+    ];
+  };
   environment.systemPackages = with pkgs; [
     acpi
     vim
@@ -146,14 +153,18 @@
 
   security.rtkit.enable = true;
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+    blueman.enable = true;
+    power-profiles-daemon.enable = true;
+    upower.enable = true;
   };
-  services.blueman.enable = true;
 
   hardware = {
     bluetooth.enable = true;
