@@ -28,14 +28,9 @@
       url = "github:nix-community/nixvim";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-    quickshell = {
-      url = "github:outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";
     };
   };
 
@@ -95,7 +90,7 @@
         # Now, defining a new system is can be done in one line
         #                               Architecture   Hostname
         orion = mkSystem inputs.nixpkgs "x86_64-linux" "orion" "lenovo-yoga-7-14IAH7-integrated";
-	heracles = mkSystem inputs.nixpkgs "x86_64-linux" "heracles" "NONE";
+        heracles = mkSystem inputs.nixpkgs "x86_64-linux" "heracles" "NONE";
       };
     };
 }
