@@ -121,8 +121,6 @@
   environment.variables = {
     NIXOS_CONFIG = "$HOME/.config/nixos/modules/configuration.nix";
     NIXOS_CONFIG_DIR = "$HOME/.config/nixos/";
-    XDG_DATA_HOME = "$HOME/.local/share";
-    XDG_CONFIG_HOME = "$HOME/.config/";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
     GTK_RC_FILES = "$HOME/.local/share/gtk-1.0/gtkrc";
     GTK2_RC_FILES = "$HOME/.local/share/gtk-2.0/gtkrc";
