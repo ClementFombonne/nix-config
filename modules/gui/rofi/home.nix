@@ -7,16 +7,8 @@ in {
     config = mkIf cfg.enable {
         programs.rofi = {
             enable = true;
-	    theme = ./themes/theme.rasi;
-            extraConfig = {
-	        modi = "drun,run,filebrowser,window,ssh";
-                show-icons = true;
-                display-drun = " Apps";
-                display-run = " Run";
-                display-filebrowser = " Files";
-                display-window = " Windows";
-            };
-	};
-        home.file.".config/rofi/themes/theme.rasi".source = ./themes/theme.rasi;
+        };
+        xdg.configFile."rofi/config.rasi".source = ./config.rasi;
+        xdg.configFile."rofi/themes/theme.rasi".source = ./themes/theme.rasi;
     };
 }

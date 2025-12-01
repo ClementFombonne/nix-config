@@ -46,7 +46,6 @@
     btop
     file
   ];
-  programs.nix-ld.enable = true; # need to run some binary
 
   # Install fonts
   fonts = {

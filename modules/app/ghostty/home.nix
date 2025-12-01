@@ -8,6 +8,6 @@ in {
 	home.packages = with pkgs; [
 	    ghostty
 	];
-        home.file.".config/ghostty/config".source = ./config;
+        xdg.configFile."ghostty/config".source = ./config;
     };
 }

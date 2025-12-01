@@ -8,16 +8,16 @@ in {
         programs.waybar.enable = true;
 
         # waybar config  
-        home.file.".config/waybar/config.jsonc".source = ./config.jsonc;
-        home.file.".config/waybar/style.css".source = ./style.css;
-        home.file.".config/waybar/color.css".source = ./color.css;
+        xdg.configFile."waybar/config.jsonc".source = ./config.jsonc;
+        xdg.configFile."waybar/style.css".source = ./style.css;
+        xdg.configFile."waybar/color.css".source = ./color.css;
 
         # nwg-bar
-        home.file.".config/nwg-bar/bar.json".source = ./nwg-bar/bar.json;
-        home.file.".config/nwg-bar/style.css".source = ./nwg-bar/style.css;
-        home.file.".config/nwg-bar/images/system-lock-screen.svg".source = ./nwg-bar/images/system-lock-screen.svg;
-        home.file.".config/nwg-bar/images/system-reboot.svg".source = ./nwg-bar/images/system-reboot.svg;
-        home.file.".config/nwg-bar/images/system-log-out.svg".source = ./nwg-bar/images/system-log-out.svg;
-        home.file.".config/nwg-bar/images/system-shutdown.svg".source = ./nwg-bar/images/system-shutdown.svg;
+        xdg.configFile."nwg-bar/bar.json".source = ./nwg-bar/bar.json;
+        xdg.configFile."nwg-bar/style.css".source = ./nwg-bar/style.css;
+        xdg.configFile."nwg-bar/images/system-lock-screen.svg".source = ./nwg-bar/images/system-lock-screen.svg;
+        xdg.configFile."nwg-bar/images/system-reboot.svg".source = ./nwg-bar/images/system-reboot.svg;
+        xdg.configFile."nwg-bar/images/system-log-out.svg".source = ./nwg-bar/images/system-log-out.svg;
+        xdg.configFile."nwg-bar/images/system-shutdown.svg".source = ./nwg-bar/images/system-shutdown.svg;
     };
 }

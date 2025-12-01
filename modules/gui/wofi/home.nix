@@ -6,6 +6,6 @@ let cfg = osConfig.modules.wofi;
 in {
     config = mkIf cfg.enable {
         programs.wofi.enable = true;
-        home.file.".config/wofi.css".source = ./wofi.css;
+        xdg.configFile."wofi/style.css".source = ./wofi.css;
     };
 }
