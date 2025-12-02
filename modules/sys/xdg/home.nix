@@ -13,16 +13,19 @@ let
 in
 {
   config = mkIf cfg.enable {
-    xdg.userDirs = {
-      enable = true;
-      documents = "$HOME/documents/";
-      desktop = "$HOME/documents/";
-      download = "$HOME/download/";
-      videos = "$HOME/media/videos/";
-      pictures = "$HOME/media/pictures/";
-      music = "$HOME/media/music/";
-      templates = "$HOME/.template/";
-      publicShare = "$HOME/public/";
+    xdg = {
+      configHome = "/home/clement/.config/";
+      userDirs = {
+        enable = true;
+        documents = "$HOME/documents/";
+        desktop = "$HOME/documents/";
+        download = "$HOME/download/";
+        videos = "$HOME/media/videos/";
+        pictures = "$HOME/media/pictures/";
+        music = "$HOME/media/music/";
+        templates = "$HOME/.template/";
+        publicShare = "$HOME/public/";
+      };
     };
   };
 }

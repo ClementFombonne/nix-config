@@ -1,5 +1,5 @@
 theme = Catppuccin Frappe
-background-opacity = 0.60
+background-opacity = "0.60"
 background-blur = true
 font-family = "JetBrains Mono"
 font-size = 14
