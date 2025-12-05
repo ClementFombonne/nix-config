@@ -45,6 +45,7 @@
     zip
     btop
     file
+    dbus
   ];
 
   # Install fonts

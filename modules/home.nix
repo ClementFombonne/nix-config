@@ -23,6 +23,6 @@ in
     ./sys/home.nix
   ];
 
-  xdg.configFile."media/wallpaper/glass.jpg".source = ../assets/wallpaper.jpg;
-  xdg.configFile."media/wallpaper/glass.png".source = ../assets/wallpaper.png;
+  xdg.configFile."wallpaper/glass.jpg".source = ../assets/wallpaper.jpg;
+  xdg.configFile."wallpaper/glass.png".source = ../assets/wallpaper.png;
 }
