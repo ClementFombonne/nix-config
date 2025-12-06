@@ -77,7 +77,12 @@
                 backupFileExtension = "old";
                 extraSpecialArgs = { inherit inputs; };
                 # Home manager config (configures programs like firefox, zsh, eww, etc)
-                users.clement = (./. + "/modules/home.nix");
+                users.clement = {
+                  imports = [
+                    (./. + "/modules/home.nix")
+                    (./. + "/hosts/${hostname}/home.nix")
+                  ];
+                };
               };
             }
           ];
