@@ -17,6 +17,7 @@ in
       configHome = "/home/clement/.config/";
       userDirs = {
         enable = true;
+        createDirectories = true;
         documents = "$HOME/documents/";
         desktop = "$HOME/documents/";
         download = "$HOME/download/";
