@@ -1,10 +1,12 @@
-{ inputs, pkgs, config, ... }:
+{ lib, ... }:
 
+let
+  dirContents = builtins.readDir ./.;
+  hasHomeNix = name: type: type == "directory" && builtins.pathExists (./. + "/${name}/home.nix");
+  validDirs = lib.filterAttrs hasHomeNix dirContents;
+
+  importPaths = map (name: ./. + "/${name}/home.nix") (builtins.attrNames validDirs);
+in
 {
-    imports = [
-        ./xdg/home.nix
-	    ./zsh/home.nix
-        ./oh-my-posh/home.nix
-        ./tmux/home.nix
-    ];
+  imports = importPaths;
 }
