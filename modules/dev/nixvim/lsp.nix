@@ -12,6 +12,7 @@ let
   pythonCfg = nixosConfig.modules.language.python;
   typstCfg = nixosConfig.modules.language.typst;
   rustCfg = nixosConfig.modules.language.rust;
+  qtCfg = nixosConfig.modules.language.qt;
 in
 {
   # Useful status updates for LSP.
@@ -61,6 +62,12 @@ in
           enable = true;
           installCargo = false;
           installRustc = false;
+        };
+      })
+      # ----- QML --------------------------------------------------------
+      (mkIf qtCfg.enable {
+        qmlls = {
+          enable = true;
         };
       })
 

@@ -45,6 +45,13 @@ in
         '';
       };
     };
+    qt = {
+      enable = mkEnableOption {
+        description = ''
+          Enable the qt toolchain.
+        '';
+      };
+    };
   };
 
   config = mkMerge [
@@ -76,6 +83,13 @@ in
         rustfmt
         cargo
         clippy
+      ];
+    })
+
+    # Qt (qt6 qml)
+    (mkIf config.modules.language.qt.enable {
+      environment.systemPackages = with pkgs; [
+        kdePackages.qtdeclarative
       ];
     })
   ];

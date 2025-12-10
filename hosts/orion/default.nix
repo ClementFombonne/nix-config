@@ -27,14 +27,16 @@
       python.enable = true;
       rust.enable = true;
       typst.enable = true;
+      qt.enable = true;
     };
     # gui
-    sddm.enable = true;
+    noctalia-sddm.enable = true;
     plymouth.enable = true;
-    # gdm.enable = true;
     hyprland.enable = true;
+    niri.enable = true;
     noctalia-shell.enable = true;
     # waybar.enable = true;
+    # gdm.enable = true;
     # rofi.enable = true;
     nmgui.enable = true;
     # eww.enable = true;

@@ -20,7 +20,11 @@
   # Remove unecessary preinstalled packages
   environment.defaultPackages = [ ];
   nixpkgs.config.allowUnfree = true;
-  services.xserver.desktopManager.xterm.enable = false;
+  services.xserver = {
+    enable = true;
+    xkb.layout = "fr,us";
+    desktopManager.xterm.enable = false;
+  };
 
   # base packages
   programs.zsh.enable = true;

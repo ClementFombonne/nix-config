@@ -26,6 +26,7 @@
       python.enable = true;
       rust.enable = true;
       typst.enable = true;
+      qt.enable = true;
     };
     # gui
     sddm.enable = true;

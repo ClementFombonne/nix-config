@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   lib,
   config,
@@ -8,23 +7,23 @@
 
 with lib;
 let
-  cfg = config.modules.hyprland;
+  cfg = config.modules.niri;
 
 in
 {
-  options.modules.hyprland = {
-    enable = mkEnableOption "hyprland";
+  options.modules.niri = {
+    enable = mkEnableOption "niri";
   };
   config = mkIf cfg.enable {
-    programs.hyprland = {
+    programs.niri = {
       enable = true;
-      xwayland.enable = true;
     };
     environment.systemPackages = with pkgs; [
+      xwayland-satellite
+      swayidle
       brightnessctl
       pavucontrol
       playerctl
-      hyprshot
     ];
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
   };
