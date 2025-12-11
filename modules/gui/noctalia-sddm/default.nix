@@ -36,6 +36,7 @@ in
       enable = true;
       package = pkgs.kdePackages.sddm; # Force Qt6 SDDM
       theme = "noctalia-sddm";
+      wayland.enable = true;
 
       # 2. INJECT DEPENDENCIES HERE
       # This makes these libs available to QML without polluting your system profile
