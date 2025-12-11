@@ -1,6 +1,8 @@
 {
+  inputs,
   pkgs,
   lib,
+  config,
   osConfig,
   mkSymlink,
   ...
@@ -13,5 +15,6 @@ let
 in
 {
   config = mkIf cfg.enable {
+    xdg.configFile."niri/config.kdl".source = mkSymlink "${modulePath}/config.kdl";
   };
 }

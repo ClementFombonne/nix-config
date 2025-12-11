@@ -1,0 +1,8 @@
+binds {
+    Mod+Enter { spawn "ghostty"; }
+    Mod+Space { spawn "zen-browser"; }
+    Mod+o { spawn "obsidian"; }
+
+    Mod+Space { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+}

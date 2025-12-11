@@ -30,6 +30,7 @@
       qt.enable = true;
     };
     # gui
+    gtk.enable = true;
     noctalia-sddm.enable = true;
     plymouth.enable = true;
     hyprland.enable = true;

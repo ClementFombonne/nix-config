@@ -20,35 +20,7 @@ in
       hyprlock
       hypridle
       hyprshot
-      magnetic-catppuccin-gtk
-      bibata-cursors
-      papirus-icon-theme
     ];
-
-    home.pointerCursor = {
-      gtk.enable = true;
-      x11.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      size = 25;
-    };
-    gtk = {
-      enable = true;
-      font.name = "DejaVu Sans";
-      font.size = 12;
-      theme = {
-        name = "Catppuccin-Frappe-Standard-Blue-Dark";
-        package = pkgs.magnetic-catppuccin-gtk;
-      };
-      iconTheme = {
-        name = "Papirus-Dark";
-        package = pkgs.papirus-icon-theme;
-      };
-      cursorTheme = {
-        name = "Bibata-Modern-Ice";
-        package = pkgs.bibata-cursors;
-      };
-    };
 
     xdg.configFile."hypr/hyprland.conf".source = mkSymlink "${modulePath}/hyprland.conf";
     xdg.configFile."hypr/conf/keybinds.conf".source = mkSymlink "${modulePath}/conf/keybinds.conf";
