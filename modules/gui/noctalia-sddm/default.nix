@@ -49,10 +49,10 @@ in
 
         # Point this to your repo
         src = pkgs.fetchFromGitHub {
-          owner = "your-github-user";
-          repo = "noctalia-sddm";
+          owner = "ClementFombonne";
+          repo = "sddm-noctalia-theme";
           rev = "main";
-          hash = "sha256-AAAAAAAAAAAAAAAAAAAA"; # Update this after first run
+          hash = "sha256-PNNYHm+V7i6UgHG8n73P1dWT5V94J5Q8/IN2ReLVupk=";
         };
 
         installPhase = ''
