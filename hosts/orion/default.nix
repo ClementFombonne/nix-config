@@ -31,7 +31,10 @@
     };
     # gui
     gtk.enable = true;
-    noctalia-sddm.enable = true;
+    noctalia-sddm = {
+      enable = true;
+      background = ../../assets/wallpaper.png;
+    };
     plymouth.enable = true;
     hyprland.enable = true;
     niri.enable = true;

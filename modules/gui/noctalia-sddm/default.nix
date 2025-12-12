@@ -10,6 +10,12 @@ with lib;
 let
   cfg = config.modules.noctalia-sddm;
 
+  toSddmVal = v: if builtins.isBool v then (if v then "true" else "false") else toString v;
+
+  bgFileName = if cfg.background != null then builtins.baseNameOf cfg.background else "noctalia.png";
+
+  bgConfigValue = "Assets/Wallpaper/${bgFileName}";
+
   # Define the dependencies your theme needs to render QML
   themeDependencies = with pkgs.kdePackages; [
     qt6ct # Styling
@@ -17,15 +23,99 @@ let
     qtwayland # Wayland support
     qtdeclarative # Core QML
   ];
+
+  finalThemeConfig = {
+    General = {
+      background = bgConfigValue;
+
+      compact = toSddmVal cfg.compact;
+      fontFamily = cfg.fontFamily;
+      clockStyle = cfg.clockStyle;
+
+      # Map nested scaling options to flat INI keys
+      fontScale = toSddmVal cfg.scaling.font;
+      radiusRatio = toSddmVal cfg.scaling.radius;
+      iradiusRatio = toSddmVal cfg.scaling.iRadius;
+      screenRadiusRatio = toSddmVal cfg.scaling.screenRadius;
+      scaleRatio = toSddmVal cfg.scaling.scale;
+      animationSpeed = toSddmVal cfg.scaling.animationSpeed;
+
+      # Allow users to inject extra keys (like colors) if needed
+    }
+    // cfg.extraSettings;
+  };
 in
 {
   options.modules.noctalia-sddm = {
     enable = mkEnableOption "Noctalia SDDM Theme";
 
-    settings = mkOption {
+    background = mkOption {
+      type = types.nullOr types.path;
+      default = null;
+      description = ''
+        Path to a custom wallpaper file. 
+        If set to null (default), the theme uses its built-in wallpaper (noctalia.png) 
+        and no file copying occurs.
+      '';
+    };
+    compact = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Enable compact mode layout.";
+    };
+
+    fontFamily = mkOption {
+      type = types.str;
+      default = "Roboto";
+      description = "Font family used in the interface.";
+    };
+
+    clockStyle = mkOption {
+      type = types.enum [
+        "digital"
+        "analog"
+      ];
+      default = "digital";
+      description = "Clock widget style.";
+    };
+
+    scaling = {
+      font = mkOption {
+        type = types.float;
+        default = 1.0;
+        description = "Scaling factor for text.";
+      };
+      radius = mkOption {
+        type = types.float;
+        default = 1.0;
+        description = "Scaling factor corner radius.";
+      };
+      iRadius = mkOption {
+        type = types.float;
+        default = 1.0;
+        description = "Scaling factor corner iRadius.";
+      };
+      screenRadius = mkOption {
+        type = types.float;
+        default = 1.0;
+        description = "Scaling factor for screen radius";
+      };
+      scale = mkOption {
+        type = types.float;
+        default = 1.0;
+        description = "Scaling factor for UI elements.";
+      };
+      animationSpeed = mkOption {
+        type = types.float;
+        default = 1.0;
+        description = "Scaling factor for animation speed.";
+      };
+    };
+
+    extraSettings = mkOption {
       type = types.attrs;
       default = { };
-      description = "Settings to override in theme.conf";
+      description = "Extra raw settings to add to the [General] section of theme.conf";
     };
   };
 
@@ -48,7 +138,6 @@ in
       (pkgs.stdenv.mkDerivation {
         name = "noctalia-sddm";
 
-        # Point this to your repo
         src = pkgs.fetchFromGitHub {
           owner = "ClementFombonne";
           repo = "sddm-noctalia-theme";
@@ -60,10 +149,16 @@ in
           mkdir -p $out/share/sddm/themes/noctalia-sddm
           cp -r * $out/share/sddm/themes/noctalia-sddm
 
-          # 4. Inject the Config (Generated from Nix options)
-          rm -f $out/share/sddm/themes/noctalia-sddm/theme.conf
-          cp ${pkgs.writeText "theme.conf" (generators.toINI { } cfg.settings)} \
-             $out/share/sddm/themes/noctalia-sddm/theme.conf
+          # --- HANDLE CUSTOM BACKGROUND ---
+          # Only run this block if the user provided a background path
+          ${lib.optionalString (cfg.background != null) ''
+            mkdir -p $out/share/sddm/themes/noctalia-sddm/Assets/Wallpaper
+            cp ${cfg.background} $out/share/sddm/themes/noctalia-sddm/Assets/Wallpaper/${bgFileName}
+          ''}
+
+          rm -f $out/share/sddm/themes/noctalia-sddm/Commons/Settings.conf
+          cp ${pkgs.writeText "theme.conf" (generators.toINI { } finalThemeConfig)} \
+             $out/share/sddm/themes/noctalia-sddm/Commons/Settings.conf
         '';
       })
     ];

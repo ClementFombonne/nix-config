@@ -1,8 +1,49 @@
+prefer-no-csd
+spawn-at-startup "ghostty -e"
+
+environment {
+    QT_QPA_PLATFORM "wayland"
+    DISPLAY null
+}
+
 binds {
-    Mod+Enter { spawn "ghostty"; }
-    Mod+Space { spawn "zen-browser"; }
-    Mod+o { spawn "obsidian"; }
+    Mod+Return { spawn "ghostty -e"; }
+    Mod+B { spawn "zen"; }
+    Mod+O { spawn "obsidian"; }
+    Mod+Q { close-window; }
 
     Mod+Space { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+
+    Mod+Ctrl+H { focus-column-left; }
+    Mod+Ctrl+L { focus-column-right; }
+    Mod+Ctrl+J cooldown-ms=150 { focus-workspace-down; }
+    Mod+Ctrl+K cooldown-ms=150 { focus-workspace-up; }
+}
+
+input {
+    touchpad {
+        natural-scroll
+    }
+}
+
+layout {
+    gaps 16
+    shadow {
+        off
+    }
+    border {
+    off
+    }
+    tab-indicator {
+        on
+        corner-radius 8
+    }
+}
+
+output "eDP-1" {
+    mode "3072x1920@120.002"
+}
+output "HDMI-A-1" {
+    mode "1920x1080@144.013"
 }
