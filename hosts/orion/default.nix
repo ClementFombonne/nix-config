@@ -34,6 +34,7 @@
     noctalia-sddm = {
       enable = true;
       background = ../../assets/wallpaper.png;
+      colorScheme = "Catppuccin";
     };
     plymouth.enable = true;
     hyprland.enable = true;
