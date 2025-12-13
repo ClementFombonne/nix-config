@@ -27,15 +27,17 @@ let
   finalThemeConfig = {
     General = {
       background = bgConfigValue;
+      colorScheme = cfg.colorScheme;
+      darkMode = toSddmVal cfg.darkMode;
+      hideShadow = toSddmVal cfg.hideShadow;
 
-      compact = toSddmVal cfg.compact;
       fontFamily = cfg.fontFamily;
       clockStyle = cfg.clockStyle;
 
       # Map nested scaling options to flat INI keys
       fontScale = toSddmVal cfg.scaling.font;
       radiusRatio = toSddmVal cfg.scaling.radius;
-      iradiusRatio = toSddmVal cfg.scaling.iRadius;
+      iRadiusRatio = toSddmVal cfg.scaling.iRadius;
       screenRadiusRatio = toSddmVal cfg.scaling.screenRadius;
       scaleRatio = toSddmVal cfg.scaling.scale;
       animationSpeed = toSddmVal cfg.scaling.animationSpeed;
@@ -58,10 +60,23 @@ in
         and no file copying occurs.
       '';
     };
-    compact = mkOption {
+
+    colorScheme = mkOption {
+      type = types.str;
+      default = "Noctalia-default";
+      description = "ColorScheme selector.";
+    };
+
+    darkMode = mkOption {
       type = types.bool;
       default = true;
-      description = "Enable compact mode layout.";
+      description = "Enable DarkMode.";
+    };
+
+    hideShadow = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Hide background shadow.";
     };
 
     fontFamily = mkOption {
@@ -126,7 +141,8 @@ in
       enable = true;
       package = pkgs.kdePackages.sddm; # Force Qt6 SDDM
       theme = "noctalia-sddm";
-      wayland.enable = true;
+      #wayland.enable = true;
+      enableHidpi = false;
 
       # 2. INJECT DEPENDENCIES HERE
       # This makes these libs available to QML without polluting your system profile
@@ -142,7 +158,7 @@ in
           owner = "ClementFombonne";
           repo = "sddm-noctalia-theme";
           rev = "main";
-          hash = "sha256-PNNYHm+V7i6UgHG8n73P1dWT5V94J5Q8/IN2ReLVupk=";
+          hash = "sha256-/8ldztumxnC907lIIMCJTNYoP1K+YJe0st1Wmvl/TNw=";
         };
 
         installPhase = ''
