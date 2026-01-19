@@ -12,5 +12,6 @@
     ./app
     ./dev
     ./sys
+    ./srv
   ];
 }

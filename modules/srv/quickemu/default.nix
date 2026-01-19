@@ -8,7 +8,6 @@
 with lib;
 let
   cfg = config.modules.quickemu;
-
 in
 {
   options.modules.quickemu = {
