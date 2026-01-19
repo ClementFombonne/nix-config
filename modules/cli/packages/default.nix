@@ -27,6 +27,7 @@ in
       unzip
       pqiv
       wf-recorder
+      wakeonlan
     ];
     environment.shellAliases = {
       ls = "eza --icons=auto";

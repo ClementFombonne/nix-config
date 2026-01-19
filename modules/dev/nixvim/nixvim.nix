@@ -87,7 +87,7 @@ in
     showmode = false;
 
     # Enable break indent
-    breakindent = true;
+    # breakindent = true;
 
     # Save undo history
     undofile = true;
@@ -119,8 +119,12 @@ in
     # Preview substitutions live, as you type!
     inccommand = "split";
 
+    wrap = false;
+
     # Show which line your cursor is on
     cursorline = true;
+
+    cmdheight = 0;
 
     # Minimal number of screen lines to keep above and below the cursor.
     scrolloff = 10;

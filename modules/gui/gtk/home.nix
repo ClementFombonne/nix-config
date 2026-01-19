@@ -33,10 +33,10 @@ in
       enable = true;
       font.name = "DejaVu Sans";
       font.size = 12;
-      theme = {
-        name = "Catppuccin-Frappe-Standard-Blue-Dark";
-        package = pkgs.magnetic-catppuccin-gtk;
-      };
+      # theme = {
+      #   name = "Catppuccin-Frappe-Standard-Blue-Dark";
+      #   package = pkgs.magnetic-catppuccin-gtk;
+      # };
 
       iconTheme = {
         name = "Papirus-Dark";

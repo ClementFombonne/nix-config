@@ -135,7 +135,15 @@ in
   };
 
   config = mkIf cfg.enable {
-
+    system.activationScripts.clearSddmCache = {
+      text = ''
+        if [ -d /var/lib/sddm/.cache ]; then
+          echo "Clearing SDDM QML cache (/var/lib/sddm/.cache)..."
+          rm -rf /var/lib/sddm/.cache
+        fi
+      '';
+      deps = [ ];
+    };
     # 1. Ensure SDDM is enabled and using Qt6
     services.displayManager.sddm = {
       enable = true;
@@ -157,8 +165,8 @@ in
         src = pkgs.fetchFromGitHub {
           owner = "ClementFombonne";
           repo = "sddm-noctalia-theme";
-          rev = "main";
-          hash = "sha256-/8ldztumxnC907lIIMCJTNYoP1K+YJe0st1Wmvl/TNw=";
+          rev = "main"; # "main";
+          hash = "sha256-qipmxb1dyzudS0I9KKIngwYaOLm4+zggqqs51lZefX8=";
         };
 
         installPhase = ''

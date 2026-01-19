@@ -59,5 +59,8 @@
     xdg.enable = true;
     packages.enable = true;
     tmux.enable = true;
+
+    # server
+    quickemu.enable = true;
   };
 }
