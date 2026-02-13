@@ -1,10 +1,19 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 with lib;
-let cfg = config.modules.vs-code;
+let
+  cfg = config.modules.vs-code;
 
-in {
-  options.modules.vs-code = { enable = mkEnableOption "vs-code"; };
+in
+{
+  options.modules.vs-code = {
+    enable = mkEnableOption "vs-code";
+  };
   config = mkIf cfg.enable {
     programs.vscode = {
       enable = true;
@@ -15,6 +24,9 @@ in {
         ms-vscode.cpptools
         ms-python.python
         charliermarsh.ruff
+        tomoki1207.pdf
+        Google.gemini-cli-vscode-ide-companion
+        myriad-dreamin.tinymist
       ];
     };
     environment.sessionVariables.NIXOS_OZONE_WL = "1";

@@ -32,6 +32,10 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia-sddm = {
+      url = "github:ClementFombonne/sddm-noctalia-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # All outputs for the system (configs)
@@ -43,6 +47,7 @@
       nixos-hardware,
       nixvim,
       noctalia,
+      noctalia-sddm,
       ...
     }@inputs:
     let
@@ -63,6 +68,7 @@
             home-manager.nixosModules.home-manager
             #nixos-hardware.nixosModules.${model}
             nixvim.nixosModules.nixvim
+            noctalia-sddm.nixosModules.default
             # Personal configuration
             ./modules/default.nix
             ./modules/configuration.nix

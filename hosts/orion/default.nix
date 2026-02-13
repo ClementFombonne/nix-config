@@ -12,6 +12,7 @@
     ghostty.enable = true;
     obsidian.enable = true;
     zen-browser.enable = true;
+    vivaldi.enable = true;
     brave.enable = true;
     discord.enable = true;
     keymapp.enable = true;
@@ -31,11 +32,7 @@
     };
     # gui
     gtk.enable = true;
-    noctalia-sddm = {
-      enable = true;
-      background = ../../assets/wallpaper.png;
-      colorScheme = "Catppuccin";
-    };
+    noctalia-sddm.enable = true;
     plymouth.enable = true;
     hyprland.enable = true;
     niri.enable = true;
