@@ -59,5 +59,6 @@
 
     # server
     quickemu.enable = true;
+    podman.enable = true;
   };
 }

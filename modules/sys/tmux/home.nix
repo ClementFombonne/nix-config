@@ -14,6 +14,6 @@ let
 in
 {
   config = mkIf cfg.enable {
-    xdg.configFile.".tmux.conf".source = mkSymlink "${modulePath}/tmux.conf";
+    xdg.configFile."tmux/tmux.conf".source = mkSymlink "${modulePath}/tmux.conf";
   };
 }

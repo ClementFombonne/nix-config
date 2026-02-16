@@ -13,6 +13,7 @@ let
   typstCfg = nixosConfig.modules.language.typst;
   rustCfg = nixosConfig.modules.language.rust;
   qtCfg = nixosConfig.modules.language.qt;
+  javaCfg = nixosConfig.modules.language.java;
 in
 {
   # Useful status updates for LSP.
@@ -67,6 +68,12 @@ in
       # ----- QML --------------------------------------------------------
       (mkIf qtCfg.enable {
         qmlls = {
+          enable = true;
+        };
+      })
+
+      (mkIf javaCfg.enable {
+        java-language-server = {
           enable = true;
         };
       })

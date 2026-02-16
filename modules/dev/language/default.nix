@@ -12,6 +12,7 @@ let
   pythonCfg = config.modules.language.python;
   typstCfg = config.modules.language.typst;
   rustCfg = config.modules.language.rust;
+  javaCfg = config.modules.language.java;
 in
 {
 
@@ -50,6 +51,18 @@ in
         description = ''
           Enable the qt toolchain.
         '';
+      };
+    };
+    java = {
+      enable = mkEnableOption {
+        description = ''
+          Enable the java toolchain.
+        '';
+      };
+      package = mkOption {
+        type = types.package;
+        default = pkgs.jdk; # Usually points to the latest LTS (e.g., JDK 21)
+        description = "The JDK package to use.";
       };
     };
   };
@@ -91,6 +104,22 @@ in
       environment.systemPackages = with pkgs; [
         kdePackages.qtdeclarative
       ];
+    })
+    # java
+    (mkIf javaCfg.enable {
+      # 1. Install the JDK and common build tools
+      environment.systemPackages = with pkgs; [
+        javaCfg.package
+        maven
+        gradle
+      ];
+
+      # 2. This is crucial for Java development on NixOS.
+      # It sets JAVA_HOME and links the binaries to /usr/bin/java
+      programs.java = {
+        enable = true;
+        package = javaCfg.package;
+      };
     })
   ];
 }
