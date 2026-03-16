@@ -13,10 +13,18 @@ let
   typstCfg = config.modules.language.typst;
   rustCfg = config.modules.language.rust;
   javaCfg = config.modules.language.java;
+  luaCfg = config.modules.language.lua;
+  nixCfg = config.modules.language.nix;
 in
 {
 
   options.modules.language = {
+    nix = {
+      enable = mkEnableOption {
+        description = "Enable the nix lsp and formatter.";
+      };
+    };
+
     gcc = {
       enable = mkEnableOption {
         description = "Enable the GNU Compiler Collection (gcc).";
@@ -46,6 +54,12 @@ in
         '';
       };
     };
+    lua = {
+      enable = mkEnableOption {
+        description = "Enable lua support.";
+      };
+    };
+
     qt = {
       enable = mkEnableOption {
         description = ''
@@ -53,6 +67,7 @@ in
         '';
       };
     };
+
     java = {
       enable = mkEnableOption {
         description = ''
@@ -68,9 +83,19 @@ in
   };
 
   config = mkMerge [
+    # nix
+    (mkIf nixCfg.enable {
+      environment.systemPackages = with pkgs; [
+        nixd
+        nixfmt-rfc-style
+      ];
+    })
     # GCC
     (mkIf gccCfg.enable {
-      environment.systemPackages = with pkgs; [ gcc ];
+      environment.systemPackages = with pkgs; [
+        gcc
+        clang-tools
+      ];
     })
 
     # Python (Python + uv)
@@ -78,6 +103,8 @@ in
       environment.systemPackages = with pkgs; [
         uv
         python314
+        ruff
+        ty
       ];
     })
 
@@ -85,17 +112,26 @@ in
     (mkIf typstCfg.enable {
       environment.systemPackages = with pkgs; [
         typst
-        typstyle
+        tinymist
       ];
     })
 
     # Rust (compiler, Cargo, fmt, clippy, analyzer)
     (mkIf rustCfg.enable {
       environment.systemPackages = with pkgs; [
-        rustc
-        rustfmt
         cargo
+        rust-analyzer
+        rustfmt
+        rustc
         clippy
+      ];
+    })
+
+    # Lua
+    (mkIf luaCfg.enable {
+      environment.systemPackages = with pkgs; [
+        lua-language-server
+        stylua
       ];
     })
 

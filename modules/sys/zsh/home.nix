@@ -13,6 +13,7 @@ in
   config = mkIf cfg.enable {
     programs.zsh = {
       enable = true; # Enable Zsh
+
       oh-my-zsh = {
         enable = true;
         theme = "fino";
@@ -20,6 +21,7 @@ in
           "git"
           "sudo"
           "copyfile"
+          # "vi-mode"
         ];
       };
     };

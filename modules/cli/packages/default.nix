@@ -28,6 +28,8 @@ in
       pqiv
       wf-recorder
       wakeonlan
+      ripgrep
+      lazygit
     ];
     environment.shellAliases = {
       ls = "eza --icons=auto";

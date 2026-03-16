@@ -22,13 +22,16 @@
     yt-music.enable = true;
     # dev
     apptainer.enable = true;
-    nixvim.enable = true;
+    #nixvim.enable = true;
+    neovim.enable = true;
     language = {
+      nix.enable = true;
       gcc.enable = true;
       python.enable = true;
       rust.enable = true;
       typst.enable = true;
       qt.enable = true;
+      lua.enable = true;
     };
     # gui
     gtk.enable = true;
