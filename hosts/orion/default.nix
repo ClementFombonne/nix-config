@@ -20,6 +20,7 @@
     vs-code.enable = true;
     steam.enable = true;
     yt-music.enable = true;
+    proton-tools.enable = true;
     # dev
     apptainer.enable = true;
     #nixvim.enable = true;

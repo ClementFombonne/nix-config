@@ -33,6 +33,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia-sddm = {
+      # url = "path:/home/clement/documents/development/noctalia-sddm";
       url = "github:ClementFombonne/sddm-noctalia-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };

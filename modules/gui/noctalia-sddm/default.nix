@@ -17,6 +17,10 @@ in
   config = mkIf cfg.enable {
     services.displayManager.sddm.noctalia = {
       enable = true;
+      # background = {
+      #   dynamic = true;
+      #   path = "/var/lib/sddm/noctalia/wallpaper.png";
+      # };
       background = ../../../assets/wallpaper.png;
       colorScheme = "Catppuccin";
     };
