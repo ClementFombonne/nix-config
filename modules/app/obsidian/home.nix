@@ -1,9 +1,17 @@
-{ inputs, lib, config, osConfig, pkgs, ... }:
+{
+  inputs,
+  lib,
+  config,
+  osConfig,
+  pkgs,
+  ...
+}:
 with lib;
 let
-    cfg = osConfig.modules.obsidian;
+  cfg = osConfig.modules.obsidian;
 
-in {
-    config = mkIf cfg.enable {
-    };
+in
+{
+  config = mkIf cfg.enable {
+  };
 }

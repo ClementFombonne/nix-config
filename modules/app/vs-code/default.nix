@@ -27,6 +27,7 @@ in
         tomoki1207.pdf
         Google.gemini-cli-vscode-ide-companion
         myriad-dreamin.tinymist
+        eamodio.gitlens
       ];
     };
     environment.sessionVariables.NIXOS_OZONE_WL = "1";

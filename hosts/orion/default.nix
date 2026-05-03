@@ -15,12 +15,14 @@
     vivaldi.enable = true;
     brave.enable = true;
     discord.enable = true;
+    onlyoffice.enable = true;
     keymapp.enable = true;
     signal.enable = true;
     vs-code.enable = true;
     steam.enable = true;
     yt-music.enable = true;
     proton-tools.enable = true;
+    obs.enable = true;
     # dev
     apptainer.enable = true;
     #nixvim.enable = true;
@@ -60,7 +62,6 @@
     xdg.enable = true;
     packages.enable = true;
     tmux.enable = true;
-
     # server
     quickemu.enable = true;
     podman.enable = true;

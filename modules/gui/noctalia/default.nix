@@ -20,5 +20,9 @@ in
   ];
   config = mkIf cfg.enable {
     services.noctalia-shell.enable = true;
+    environment.systemPackages = with pkgs; [
+      gpu-screen-recorder
+      xdg-desktop-portal
+    ];
   };
 }

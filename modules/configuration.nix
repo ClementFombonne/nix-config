@@ -73,7 +73,9 @@
       extraPortals = with pkgs; [
         xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland
       ];
+      config.common.default = "*";
     };
   };
 
@@ -180,6 +182,7 @@
       intel-vaapi-driver
       libvdpau-va-gl
       libva-vdpau-driver
+      vpl-gpu-rt
     ];
   };
 

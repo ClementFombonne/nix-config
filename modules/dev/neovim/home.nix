@@ -22,6 +22,8 @@ in
       viAlias = true;
       vimAlias = true;
       defaultEditor = true;
+      withPython3 = false;
+      withRuby = false;
       plugins = with pkgs.vimPlugins; [
         catppuccin-nvim
         mini-nvim
