@@ -62,9 +62,11 @@
       mkSystem =
         pkgs: system: hostname: model:
         pkgs.lib.nixosSystem {
-          system = system;
           modules = [
-            { networking.hostName = hostname; }
+            {
+              nixpkgs.hostPlatform = system;
+              networking.hostName = hostname;
+            }
             # General configuration (users, networking, sound, etc)
             home-manager.nixosModules.home-manager
             #nixos-hardware.nixosModules.${model}

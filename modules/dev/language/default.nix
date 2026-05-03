@@ -87,7 +87,7 @@ in
     (mkIf nixCfg.enable {
       environment.systemPackages = with pkgs; [
         nixd
-        nixfmt-rfc-style
+        nixfmt
       ];
     })
     # GCC

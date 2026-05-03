@@ -14,7 +14,7 @@ in
     inherit nixosConfigPath mkSymlink;
   };
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
   imports = [
     ./gui/home.nix
     ./cli/home.nix
