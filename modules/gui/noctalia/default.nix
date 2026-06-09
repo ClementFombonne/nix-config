@@ -15,12 +15,9 @@ in
   options.modules.noctalia-shell = {
     enable = mkEnableOption "noctalia-shell";
   };
-  imports = [
-    inputs.noctalia.nixosModules.default
-  ];
   config = mkIf cfg.enable {
-    services.noctalia-shell.enable = true;
     environment.systemPackages = with pkgs; [
+      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       gpu-screen-recorder
       xdg-desktop-portal
     ];
