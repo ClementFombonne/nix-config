@@ -32,11 +32,15 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia-sddm = {
-      # url = "path:/home/clement/documents/development/noctalia-sddm";
-      url = "github:ClementFombonne/sddm-noctalia-theme";
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # noctalia-sddm = {
+    #   # url = "path:/home/clement/documents/development/noctalia-sddm";
+    #   url = "github:ClementFombonne/sddm-noctalia-theme";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   # All outputs for the system (configs)
@@ -48,7 +52,7 @@
       nixos-hardware,
       nixvim,
       noctalia,
-      noctalia-sddm,
+      # noctalia-sddm,
       ...
     }@inputs:
     let
@@ -71,7 +75,7 @@
             home-manager.nixosModules.home-manager
             #nixos-hardware.nixosModules.${model}
             nixvim.nixosModules.nixvim
-            noctalia-sddm.nixosModules.default
+            # noctalia-sddm.nixosModules.default
             # Personal configuration
             ./modules/default.nix
             ./modules/configuration.nix

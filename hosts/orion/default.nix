@@ -25,7 +25,6 @@
     obs.enable = true;
     # dev
     apptainer.enable = true;
-    #nixvim.enable = true;
     neovim.enable = true;
     language = {
       nix.enable = true;
@@ -38,20 +37,12 @@
     };
     # gui
     gtk.enable = true;
-    noctalia-sddm.enable = true;
     plymouth.enable = true;
     hyprland.enable = true;
     niri.enable = true;
     noctalia-shell.enable = true;
-    # waybar.enable = true;
-    # gdm.enable = true;
-    # rofi.enable = true;
-    nmgui.enable = true;
-    # eww.enable = true;
-    # dunst.enable = true;
 
     # cli
-    # nvim.enable = true;
     zsh.enable = true;
     oh-my-posh.enable = true;
     git.enable = true;
