@@ -19,8 +19,8 @@ in
       hyprshot
     ];
 
-    xdg.configFile."hypr/hyprland.conf".source = mkSymlink "${modulePath}/hyprland.conf";
-    xdg.configFile."hypr/conf/keybinds.conf".source = mkSymlink "${modulePath}/conf/keybinds.conf";
+    xdg.configFile."hypr/hyprland.lua".source = mkSymlink "${modulePath}/hyprland.lua";
+    xdg.configFile."hypr/conf/keybinds.lua".source = mkSymlink "${modulePath}/conf/keybinds.lua";
     xdg.configFile."electron-flags.conf".source = mkSymlink "${modulePath}/electron-flags.conf";
   };
 }

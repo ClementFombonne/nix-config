@@ -16,6 +16,6 @@ let
 in
 {
   config = mkIf cfg.hyprland.enable {
-    xdg.configFile."hypr/conf/monitor.conf".source = mkSymlink "${modulePath}/monitor.conf";
+    xdg.configFile."hypr/conf/monitor.lua".source = mkSymlink "${modulePath}/monitor.lua";
   };
 }
