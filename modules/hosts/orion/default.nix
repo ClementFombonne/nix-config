@@ -1,19 +1,20 @@
 { self, inputs, ... }: {
   flake.nixosConfigurations.orion = inputs.nixpkgs.lib.nixosSystem {
-    modules = [
-      self.nixosModules.baseConfiguration
-      self.nixosModules.baseHomeManager
-      self.nixosModules.orionConfiguration
+    modules = with self.nixosModules; [
+      baseHomeManager
+      orionConfiguration
+      profile-desktop
+      intel-cpu
+      intel-gpu
+      nix-ld
 
-      self.nixosModules.ghostty
-      self.nixosModules.neovim
-      self.nixosModules.hyprland
-      self.nixosModules.zen-browser
-      self.nixosModules.steam
-      self.nixosModules.obsidian
-      self.nixosModules.onlyoffice
-      self.nixosModules.discord
-      self.nixosModules.media-utils
+      ghostty
+      neovim
+      steam
+      obsidian
+      onlyoffice
+      discord
+      media-utils
     ];
   };
 }

@@ -2,8 +2,6 @@
   flake.nixosModules.hyprland = { pkgs, ... }: {
     imports = [
       self.nixosModules.noctalia-shell
-      self.nixosModules.plymouth
-      self.nixosModules.desktop-theme
     ];
 
     programs.hyprland = {
