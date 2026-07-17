@@ -9,6 +9,7 @@
       zen-browser
       media-utils
       proton-tools
+      signal
       desktop-theme
     ];
   };

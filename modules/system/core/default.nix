@@ -6,7 +6,11 @@
       self.nixosModules.core-user
       self.nixosModules.core-locale
     ];
+    environment.defaultPackages = [ ];
+
     services = {
+      power-profiles-daemon.enable = true;
+      upower.enable = true;
       openssh = {
         enable = true;
         settings = {

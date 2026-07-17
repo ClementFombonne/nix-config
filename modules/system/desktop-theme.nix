@@ -9,6 +9,10 @@
       adwaita-qt6
     ];
 
+    fonts.packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+    ];
+
     environment.variables = {
       XCURSOR_THEME = "Bibata-Modern-Ice";
       XCURSOR_SIZE = "25";

@@ -2,6 +2,7 @@
   flake.nixosModules.core-boot = { pkgs, ... }: {
     boot = {
       kernelPackages = pkgs.linuxPackages_latest;
+      tmp.cleanOnBoot = true;
 
       loader = {
         timeout = lib.mkDefault 2;
