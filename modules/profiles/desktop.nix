@@ -7,6 +7,8 @@
       network
       hyprland
       zen-browser
+      media-utils
+      proton-tools
       desktop-theme
     ];
   };
